@@ -38,7 +38,8 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white h-screen bg-gradient-to-r bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
+    // <header className="bg-white h-screen bg-gradient-to-r bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
+    <header className="bg-white h-screen bg-gradient-to-r bg-[url('/hotels.jpg')] bg-no-repeat bg-cover bg-center">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
         <div className="flex h-28 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
