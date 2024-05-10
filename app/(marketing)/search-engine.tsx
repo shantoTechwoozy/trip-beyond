@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -9,6 +8,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+
 export default function SearchEngine() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -29,24 +29,24 @@ export default function SearchEngine() {
 
   return (
     <Carousel setApi={setApi} className="w-full max-w-screen-xl h-64">
-      <div className="py-2 text-center text-sm text-white ">
+      <div className="py-2 text-center text-sm text-white">
         Slide {current} of {count}
       </div>
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
             <Card>
-              <CardContent className="w-100 flex aspect-auto items-center justify-center p-20 ">
+              <CardContent className="w-100 flex aspect-auto items-center justify-center p-20">
                 <span className="text-4xl font-semibold">
-                  Slide No: {index + 1}, Comming soon
+                  Slide No: {index + 1}, Coming soon
                 </span>
               </CardContent>
             </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden sm:block" />
+      <CarouselNext className="hidden sm:block" />
     </Carousel>
   );
 }
