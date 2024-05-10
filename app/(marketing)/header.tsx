@@ -29,6 +29,7 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import SearchEngine from "./search-engine";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -38,7 +39,6 @@ const Header: React.FC = () => {
   };
 
   return (
-    // <header className="bg-white h-screen bg-gradient-to-r bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
     <header className="bg-white h-screen bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
         <div className="flex h-28 items-center justify-between">
@@ -101,12 +101,12 @@ const Header: React.FC = () => {
               <div className="block md:hidden">
                 <Drawer>
                   <DrawerTrigger asChild>
-                    <button
+                    <Button
                       className="rounded-full bg-[#FF9C00] p-2 text-gray-600 transition hover:text-gray-600/75"
                       onClick={toggleMenu}
                     >
                       <TiThMenuOutline className="h-5 w-5" />
-                    </button>
+                    </Button>
                   </DrawerTrigger>
                   <DrawerContent>
                     <div className="mx-auto w-full max-w-sm">
@@ -164,6 +164,7 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
+        <SearchEngine/>
       </div>
     </header>
   );
