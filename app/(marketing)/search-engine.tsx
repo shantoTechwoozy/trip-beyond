@@ -26,7 +26,7 @@ export default function SearchEngine() {
   const [api, setApi] = useState<CarouselApi | undefined>();
   const [current, setCurrent] = useState(0);
 
-  //Carousel Menu
+  // Carousel Menu
   const menus = [
     { label: "Flights", icon: <MdFlight /> },
     { label: "Hotels", icon: <RiHotelLine /> },
@@ -62,17 +62,17 @@ export default function SearchEngine() {
 
   return (
     <div className="w-full max-w-screen-xl">
-      <div className="flex flex-wrap justify-center py-2 text-center text-lg text-white space-x-10">
+      <div className="flex flex-wrap justify-center py-2 text-center text-lg italic text-white space-x-4 sm:space-x-8">
         {menus.map((menu, index) => (
           <div
             key={index}
-            className={`cursor-pointer flex items-center ${
+            className={`cursor-pointer flex items-center mb-2 sm:mb-0 ${
               current === index + 1 ? "font-bold" : ""
             }`}
             onClick={() => handleMenuClick(index)}
           >
             {typeof menu === "object" ? (
-              <div className="flex items-center hover:bg-orange-700">
+              <div className="flex items-center hover:bg-orange-400 p-2 rounded-lg">
                 {menu.icon}
                 <span className="ml-2">{menu.label}</span>
               </div>
