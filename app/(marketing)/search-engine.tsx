@@ -5,6 +5,11 @@ import Hotel from "@/components/carousel-slides/hotel";
 import Package from "@/components/carousel-slides/package";
 import SpecialDeals from "@/components/carousel-slides/special-deals";
 import Transportation from "@/components/carousel-slides/transportation";
+import { MdFlight } from "react-icons/md";
+import { RiHotelLine } from "react-icons/ri";
+import { TbPackages } from "react-icons/tb";
+import { IoCarOutline } from "react-icons/io5";
+import { ImTicket } from "react-icons/im";
 import {
   Carousel,
   CarouselContent,
@@ -23,11 +28,11 @@ export default function SearchEngine() {
 
   //Carousel Menu
   const menus = [
-    "Flights",
-    "Hotels",
-    "Packages",
-    "Transportation",
-    "Special Deals",
+    { label: "Flights", icon: <MdFlight /> },
+    { label: "Hotels", icon: <RiHotelLine /> },
+    { label: "Packages", icon: <TbPackages /> },
+    { label: "Transportation", icon: <IoCarOutline /> },
+    { label: "Special Deals", icon: <ImTicket /> },
   ];
 
   useEffect(() => {
@@ -57,16 +62,23 @@ export default function SearchEngine() {
 
   return (
     <div className="w-full max-w-screen-xl">
-      <div className="flex flex-wrap justify-center py-2 text-center text-sm text-white space-x-6">
+      <div className="flex flex-wrap justify-center py-2 text-center text-lg text-white space-x-10">
         {menus.map((menu, index) => (
           <div
             key={index}
-            className={`cursor-pointer ${
+            className={`cursor-pointer flex items-center ${
               current === index + 1 ? "font-bold" : ""
             }`}
             onClick={() => handleMenuClick(index)}
           >
-            {menu}
+            {typeof menu === "object" ? (
+              <div className="flex items-center hover:bg-orange-700">
+                {menu.icon}
+                <span className="ml-2">{menu.label}</span>
+              </div>
+            ) : (
+              menu
+            )}
           </div>
         ))}
       </div>

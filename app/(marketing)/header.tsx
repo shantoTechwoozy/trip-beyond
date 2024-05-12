@@ -32,7 +32,12 @@ import {
 import SearchEngine from "./search-engine";
 
 const Header: React.FC = () => {
+  const [isClient, setIsClient] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
@@ -65,23 +70,25 @@ const Header: React.FC = () => {
                   </Select>
                 </div>
 
-                <div>
-                  <ClerkLoading>
-                    <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-                  </ClerkLoading>
-                  <ClerkLoaded>
-                    <SignedIn>
-                      <UserButton afterSignOutUrl="/" />
-                    </SignedIn>
-                    <SignedOut>
-                      <SignInButton mode="modal">
-                        <Button size="lg" variant="common">
-                          Login
-                        </Button>
-                      </SignInButton>
-                    </SignedOut>
-                  </ClerkLoaded>
-                </div>
+                {isClient && (
+                  <div>
+                    <ClerkLoading>
+                      <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
+                    </ClerkLoading>
+                    <ClerkLoaded>
+                      <SignedIn>
+                        <UserButton afterSignOutUrl="/" />
+                      </SignedIn>
+                      <SignedOut>
+                        <SignInButton mode="modal">
+                          <Button size="lg" variant="common">
+                            Login
+                          </Button>
+                        </SignInButton>
+                      </SignedOut>
+                    </ClerkLoaded>
+                  </div>
+                )}
 
                 <div>
                   <Button className="h-9 font-bold" variant="custom">
@@ -120,21 +127,25 @@ const Header: React.FC = () => {
                       </DrawerHeader>
                       <div className="p-4 pb-0">
                         <div className="space-y-4">
-                            <ClerkLoading>
-                              <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-                            </ClerkLoading>
-                            <ClerkLoaded>
-                              <SignedIn>
-                                <UserButton afterSignOutUrl="/" />
-                              </SignedIn>
-                              <SignedOut>
-                                <SignInButton mode="modal">
-                                  <Button size="lg" variant="custom">
-                                    Register
-                                  </Button>
-                                </SignInButton>
-                              </SignedOut>
-                            </ClerkLoaded>
+                          {isClient && (
+                            <div>
+                              <ClerkLoading>
+                                <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
+                              </ClerkLoading>
+                              <ClerkLoaded>
+                                <SignedIn>
+                                  <UserButton afterSignOutUrl="/" />
+                                </SignedIn>
+                                <SignedOut>
+                                  <SignInButton mode="modal">
+                                    <Button size="lg" variant="custom">
+                                      Register
+                                    </Button>
+                                  </SignInButton>
+                                </SignedOut>
+                              </ClerkLoaded>
+                            </div>
+                          )}
 
                           <div>
                             <Button className="w-full" variant="custom">
@@ -163,7 +174,7 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-        <SearchEngine/>
+        <SearchEngine />
       </div>
     </header>
   );
