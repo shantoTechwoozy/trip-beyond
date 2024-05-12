@@ -50,8 +50,8 @@ const Header: React.FC = () => {
           </div>
           <div className="md:flex md:items-center md:gap-12">
             <nav aria-label="Global" className="hidden md:block">
-              <ul className="flex items-center gap-8 text-sm">
-                <li className="text-gray-500 transition hover:text-gray-500/75">
+              <div className="flex items-center gap-8 text-sm">
+                <div className="text-gray-500 transition hover:text-gray-500/75">
                   <Select>
                     <SelectTrigger className="w-[75px]">
                       <SelectValue placeholder="USD" />
@@ -63,9 +63,9 @@ const Header: React.FC = () => {
                       </SelectGroup>
                     </SelectContent>
                   </Select>
-                </li>
+                </div>
 
-                <li>
+                <div>
                   <ClerkLoading>
                     <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
                   </ClerkLoading>
@@ -81,20 +81,20 @@ const Header: React.FC = () => {
                       </SignInButton>
                     </SignedOut>
                   </ClerkLoaded>
-                </li>
+                </div>
 
-                <li>
+                <div>
                   <Button className="h-9 font-bold" variant="custom">
                     Agent Login
                   </Button>
-                </li>
+                </div>
 
-                <li className="text-gray-500 transition hover:text-gray-500/75">
+                <div className="text-gray-500 transition hover:text-gray-500/75">
                   <div className="rounded-full bg-[#FF9C00] p-2">
                     <FaPhone className="text-1xl text-black" />
                   </div>
-                </li>
-              </ul>
+                </div>
+              </div>
             </nav>
 
             <div className="flex items-center gap-4">
@@ -119,8 +119,7 @@ const Header: React.FC = () => {
                         />
                       </DrawerHeader>
                       <div className="p-4 pb-0">
-                        <ul className="space-y-4">
-                          <li>
+                        <div className="space-y-4">
                             <ClerkLoading>
                               <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
                             </ClerkLoading>
@@ -136,21 +135,21 @@ const Header: React.FC = () => {
                                 </SignInButton>
                               </SignedOut>
                             </ClerkLoaded>
-                          </li>
-                          <li>
+
+                          <div>
                             <Button className="w-full" variant="custom">
                               Agent Login
                             </Button>
-                          </li>
-                          <li>
+                          </div>
+                          <div>
                             <div className="flex items-center space-x-2">
                               <FaPhone className="text-1xl text-white" />
                               <span className="text-1xl text-white">
                                 123-456-7890
                               </span>
                             </div>
-                          </li>
-                        </ul>
+                          </div>
+                        </div>
                       </div>
                       <DrawerFooter>
                         <DrawerClose asChild>

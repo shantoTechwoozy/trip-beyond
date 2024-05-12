@@ -1,5 +1,10 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useState, useEffect } from "react";
+import { Card } from "@/components/ui/card";
+import Flight from "@/components/carousel-slides/flight";
+import Hotel from "@/components/carousel-slides/hotel";
+import Package from "@/components/carousel-slides/package";
+import SpecialDeals from "@/components/carousel-slides/special-deals";
+import Transportation from "@/components/carousel-slides/transportation";
 import {
   Carousel,
   CarouselContent,
@@ -9,44 +14,75 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
+// Components for each carousel slide
+const CarouselSlides = [Flight, Hotel, Package, Transportation, SpecialDeals];
+
 export default function SearchEngine() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
+  const [api, setApi] = useState<CarouselApi | undefined>();
+  const [current, setCurrent] = useState(0);
 
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
+  //Carousel Menu
+  const menus = [
+    "Flights",
+    "Hotels",
+    "Packages",
+    "Transportation",
+    "Special Deals",
+  ];
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
+  useEffect(() => {
+    if (!api) return;
 
-    api.on("select", () => {
+    const updateCurrentSlide = () => {
       setCurrent(api.selectedScrollSnap() + 1);
-    });
+    };
+
+    const setApiListeners = () => {
+      api.on("select", updateCurrentSlide);
+    };
+
+    setApiListeners();
+    updateCurrentSlide();
+
+    return () => {
+      api.off("select", updateCurrentSlide);
+    };
   }, [api]);
 
+  const handleMenuClick = (index: number) => {
+    if (api) {
+      api.scrollTo(index);
+    }
+  };
+
   return (
-    <Carousel setApi={setApi} className="w-full max-w-screen-xl h-64">
-      <div className="py-2 text-center text-sm text-white">
-        Slide {current} of {count}
-      </div>
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <Card>
-              <CardContent className="w-100 flex aspect-auto items-center justify-center p-20">
-                <span className="text-4xl font-semibold">
-                  Slide No: {index + 1}, Coming soon
-                </span>
-              </CardContent>
-            </Card>
-          </CarouselItem>
+    <div className="w-full max-w-screen-xl">
+      <div className="flex justify-center py-2 text-center text-sm text-white space-x-6">
+        {menus.map((menu, index) => (
+          <div
+            key={index}
+            className={`cursor-pointer ${
+              current === index + 1 ? "font-bold" : ""
+            }`}
+            onClick={() => handleMenuClick(index)}
+          >
+            {menu}
+          </div>
         ))}
-      </CarouselContent>
-      <CarouselPrevious className="hidden sm:block" />
-      <CarouselNext className="hidden sm:block" />
-    </Carousel>
+      </div>
+      <Carousel setApi={setApi} className="h-62">
+        <CarouselContent>
+          {CarouselSlides.map((Slide, index) => (
+            <CarouselItem key={index}>
+              <Card>
+                <Slide />
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="hidden sm:block" />
+        <CarouselNext className="hidden sm:block" />
+      </Carousel>
+    </div>
   );
 }
