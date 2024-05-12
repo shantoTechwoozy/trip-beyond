@@ -57,7 +57,7 @@ export default function SearchEngine() {
 
   return (
     <div className="w-full max-w-screen-xl">
-      <div className="flex justify-center py-2 text-center text-sm text-white space-x-6">
+      <div className="flex flex-wrap justify-center py-2 text-center text-sm text-white space-x-6">
         {menus.map((menu, index) => (
           <div
             key={index}
