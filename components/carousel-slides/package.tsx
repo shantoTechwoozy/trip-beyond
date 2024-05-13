@@ -1,4 +1,3 @@
-// components/CarouselSlides/Slide2.tsx
 import React from "react";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";

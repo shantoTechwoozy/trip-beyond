@@ -238,7 +238,7 @@ const CarouselNext = React.forwardRef<
         "absolute  bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 h-8 w-8 rounded-full",
         orientation === "horizontal"
           ? "-right-20 top-1/2 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+          : "-bottom-12 left-2/2 -translate-x-1/2 rotate-90",
         className
       )}
       disabled={!canScrollNext}

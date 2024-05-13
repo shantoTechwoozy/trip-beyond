@@ -74,3 +74,11 @@
       @apply bg-background text-foreground;
     }
   }
+
+  /* Custom styles for the DealsCard component */
+.custom-deals-card {
+  /* Add your custom styles here */
+  width: 100%; /* Make the card 100% width */
+  height: 400px; /* Set the height of the card */
+  /* Add any other styles as needed */
+}
