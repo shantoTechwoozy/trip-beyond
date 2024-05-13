@@ -61,7 +61,7 @@ export default function SearchEngine() {
   };
 
   return (
-    <div className="w-full max-w-screen-xl">
+    <div className="w-full max-w-screen-xl mt-16">
       <div className="flex flex-wrap justify-center py-2 text-center text-lg italic text-white space-x-4 sm:space-x-8">
         {menus.map((menu, index) => (
           <div

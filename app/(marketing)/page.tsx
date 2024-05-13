@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p className="text-center decoration-solid ">
+    <main className="flex flex-col items-center justify-between p-5 md:p-24">
+      {" "}
+      {/* Adjust padding for different screen sizes */}
+      <p className="text-center text-justify max-w-lg md:max-w-none decoration-solid">
+        {" "}
+        {/* Limit text width on larger screens */}
         TechoWoozy is a prominent software development and digital solutions
         agency committed to empowering businesses to excel in the dynamic
         digital realm. With a seasoned team of experts and a fervor for
@@ -14,7 +18,9 @@ export default function Home() {
         dedicated to driving success and fostering growth through innovative
         technologies and strategic digital initiatives.
       </p>
-      <Button variant="common">Read more</Button>
+      <Button className="mt-4" variant="custom">
+        Read more
+      </Button>
     </main>
   );
 }
