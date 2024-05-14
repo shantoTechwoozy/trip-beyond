@@ -12,7 +12,7 @@ export default function Home() {
         lifetime. Join us and journey beyond the ordinary with Trip Beyond.
       </p>
       <Button
-        className="mt-4 flex justify-center w-full md:w-auto"
+        className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4 mt-5"
         variant="custom"
       >
         Read more
