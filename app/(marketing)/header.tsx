@@ -148,7 +148,10 @@ const Header: React.FC = () => {
                           )}
 
                           <div>
-                            <Button className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4" variant="custom">
+                            <Button
+                              className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                              variant="custom"
+                            >
                               Agent Login
                             </Button>
                           </div>
