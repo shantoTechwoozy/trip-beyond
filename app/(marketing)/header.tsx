@@ -44,8 +44,9 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="h-screen bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
+    <header className="relative h-screen bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
         <div className="flex h-36 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
             <a className="block text-teal-600">
@@ -53,129 +54,117 @@ const Header: React.FC = () => {
               <Image src="/logo.png" height={60} width={180} alt="logo" />
             </a>
           </div>
-          <div className="md:flex md:items-center md:gap-12">
-            <nav aria-label="Global" className="hidden md:block">
-              <div className="flex items-center gap-8 text-sm">
-                <div className="text-gray-500 transition hover:text-gray-500/75">
-                  <Select>
-                    <SelectTrigger className="w-[75px]">
-                      <SelectValue placeholder="USD" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        <SelectItem value="BDT">Dollar</SelectItem>
-                        <SelectItem value="banana">BDT</SelectItem>
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </div>
+          <div className="flex items-center gap-4 md:hidden">
+            <Drawer>
+              <DrawerTrigger asChild>
+                <Button
+                  className="rounded-full bg-[#FF9C00] p-2 text-gray-600 transition hover:text-gray-600/75"
+                  onClick={toggleMenu}
+                >
+                  <TiThMenuOutline className="h-5 w-5" />
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <div className="mx-auto w-full max-w-sm">
+                  <DrawerHeader>
+                    <Image src="/logo.png" height={90} width={90} alt="logo" />
+                  </DrawerHeader>
+                  <div className="p-4 pb-0">
+                    <div className="space-y-4">
+                      {isClient && (
+                        <div>
+                          <ClerkLoading>
+                            <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
+                          </ClerkLoading>
+                          <ClerkLoaded>
+                            <SignedIn>
+                              <UserButton afterSignOutUrl="/" />
+                            </SignedIn>
+                            <SignedOut>
+                              <SignInButton mode="modal">
+                                <Button size="lg" variant="custom">
+                                  Register
+                                </Button>
+                              </SignInButton>
+                            </SignedOut>
+                          </ClerkLoaded>
+                        </div>
+                      )}
 
-                {isClient && (
-                  <div>
-                    <ClerkLoading>
-                      <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-                    </ClerkLoading>
-                    <ClerkLoaded>
-                      <SignedIn>
-                        <UserButton afterSignOutUrl="/" />
-                      </SignedIn>
-                      <SignedOut>
-                        <SignInButton mode="modal">
-                          <Button size="lg" variant="common">
-                            Login
-                          </Button>
-                        </SignInButton>
-                      </SignedOut>
-                    </ClerkLoaded>
-                  </div>
-                )}
-
-                <div>
-                  <Button className="h-9 font-bold" variant="custom">
-                    Agent Login
-                  </Button>
-                </div>
-
-                <div className="text-gray-500 transition hover:text-gray-500/75">
-                  <div className="rounded-full bg-[#FF9C00] p-2">
-                    <FaPhone className="text-1xl text-black" />
-                  </div>
-                </div>
-              </div>
-            </nav>
-
-            <div className="flex items-center gap-4">
-              <div className="block md:hidden">
-                <Drawer>
-                  <DrawerTrigger asChild>
-                    <Button
-                      className="rounded-full bg-[#FF9C00] p-2 text-gray-600 transition hover:text-gray-600/75"
-                      onClick={toggleMenu}
-                    >
-                      <TiThMenuOutline className="h-5 w-5" />
-                    </Button>
-                  </DrawerTrigger>
-                  <DrawerContent>
-                    <div className="mx-auto w-full max-w-sm">
-                      <DrawerHeader>
-                        <Image
-                          src="/logo.png"
-                          height={90}
-                          width={90}
-                          alt="logo"
-                        />
-                      </DrawerHeader>
-                      <div className="p-4 pb-0">
-                        <div className="space-y-4">
-                          {isClient && (
-                            <div>
-                              <ClerkLoading>
-                                <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-                              </ClerkLoading>
-                              <ClerkLoaded>
-                                <SignedIn>
-                                  <UserButton afterSignOutUrl="/" />
-                                </SignedIn>
-                                <SignedOut>
-                                  <SignInButton mode="modal">
-                                    <Button size="lg" variant="custom">
-                                      Register
-                                    </Button>
-                                  </SignInButton>
-                                </SignedOut>
-                              </ClerkLoaded>
-                            </div>
-                          )}
-
-                          <div>
-                            <Button
-                              className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
-                              variant="custom"
-                            >
-                              Agent Login
-                            </Button>
-                          </div>
-                          <div>
-                            <div className="flex items-center space-x-2">
-                              <FaPhone className="text-1xl text-white" />
-                              <span className="text-1xl text-white">
-                                123-456-7890
-                              </span>
-                            </div>
-                          </div>
+                      <div>
+                        <Button
+                          className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                          variant="custom"
+                        >
+                          Agent Login
+                        </Button>
+                      </div>
+                      <div>
+                        <div className="flex items-center space-x-2">
+                          <FaPhone className="text-1xl text-white" />
+                          <span className="text-1xl text-white">
+                            123-456-7890
+                          </span>
                         </div>
                       </div>
-                      <DrawerFooter>
-                        <DrawerClose asChild>
-                          <Button variant="common">Close</Button>
-                        </DrawerClose>
-                      </DrawerFooter>
                     </div>
-                  </DrawerContent>
-                </Drawer>
+                  </div>
+                  <DrawerFooter>
+                    <DrawerClose asChild>
+                      <Button variant="common">Close</Button>
+                    </DrawerClose>
+                  </DrawerFooter>
+                </div>
+              </DrawerContent>
+            </Drawer>
+          </div>
+          <nav aria-label="Global" className="hidden md:flex items-center gap-8 text-sm">
+            <div className="text-gray-500 transition hover:text-gray-500/75">
+              <Select>
+                <SelectTrigger className="w-[75px]">
+                  <SelectValue placeholder="USD" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectItem value="BDT">Dollar</SelectItem>
+                    <SelectItem value="banana">BDT</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {isClient && (
+              <div>
+                <ClerkLoading>
+                  <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
+                </ClerkLoading>
+                <ClerkLoaded>
+                  <SignedIn>
+                    <UserButton afterSignOutUrl="/" />
+                  </SignedIn>
+                  <SignedOut>
+                    <SignInButton mode="modal">
+                      <Button size="lg" variant="common">
+                        Login
+                      </Button>
+                    </SignInButton>
+                  </SignedOut>
+                </ClerkLoaded>
+              </div>
+            )}
+
+            <div>
+              <Button className="h-9 font-bold" variant="custom">
+                Agent Login
+              </Button>
+            </div>
+
+            <div className="text-gray-500 transition hover:text-gray-500/75">
+              <div className="rounded-full bg-[#FF9C00] p-2">
+                <FaPhone className="text-1xl text-black" />
               </div>
             </div>
-          </div>
+          </nav>
         </div>
         <SearchEngine />
       </div>

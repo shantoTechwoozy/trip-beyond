@@ -1,22 +1,42 @@
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SelectAge } from "./inner-sections/passenger-age";
+import { SelectEconomy } from "./inner-sections/economy-set";
 
 const Flight: React.FC = () => {
   return (
-    <Tabs defaultValue="oneWay" className="w-full md:w-[430px] p-8">
-      <TabsList className="flex flex-wrap justify-between w-full">
-        <TabsTrigger value="oneWay">One Way</TabsTrigger>
-        <TabsTrigger value="roundTrip">Round Trip</TabsTrigger>
-        <TabsTrigger value="multiCity">Multi-City</TabsTrigger>
+    <Tabs defaultValue="oneWay" className="w-full md:w-[500px] p-8">
+      <TabsList className="flex justify-between space-x-5 md:space-x-0">
+        <TabsTrigger value="oneWay" className="flex-grow text-center">
+          One Way
+        </TabsTrigger>
+        <TabsTrigger value="roundTrip" className="flex-grow text-center">
+          Round Trip
+        </TabsTrigger>
+        <TabsTrigger value="multiCity" className="flex-grow text-center">
+          Multi-City
+        </TabsTrigger>
       </TabsList>
+      
       <TabsContent value="oneWay">
         <Card className="border-none">
           <CardHeader>
@@ -25,8 +45,8 @@ const Flight: React.FC = () => {
               Enter details for One Way trip here.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+          <CardContent className="space-y-2 p-0">
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
               <div className="w-full md:w-1/2">
                 <Label htmlFor="departure">Departure</Label>
                 <Input id="departure" />
@@ -47,8 +67,8 @@ const Flight: React.FC = () => {
               Enter details for Round Trip here.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+          <CardContent className="space-y-2 p-0">
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
               <div className="w-full md:w-1/2">
                 <Label htmlFor="departure">Departure</Label>
                 <Input id="departure" />
@@ -69,8 +89,8 @@ const Flight: React.FC = () => {
               Enter details for Multi-City trip here.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+          <CardContent className="space-y-2 p-0">
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
               <div className="w-full md:w-1/2">
                 <Label htmlFor="departure1">Departure</Label>
                 <Input id="departure1" />

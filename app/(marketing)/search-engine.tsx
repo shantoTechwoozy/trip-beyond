@@ -82,7 +82,7 @@ export default function SearchEngine() {
           </div>
         ))}
       </div>
-      <Carousel setApi={setApi} className="h-62">
+      <Carousel setApi={setApi}>
         <CarouselContent>
           {CarouselSlides.map((Slide, index) => (
             <CarouselItem key={index}>
