@@ -19,8 +19,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SelectAge } from "./inner-sections/passenger-age";
-import { SelectEconomy } from "./inner-sections/economy-set";
 
 const Flight: React.FC = () => {
   return (
