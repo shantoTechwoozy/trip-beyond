@@ -24,9 +24,9 @@ import { SelectEconomy } from "../search-engine-select/select-economy";
 
 const Flight: React.FC = () => {
   return (
-    <div className="flex justify-center items-start space-x-4 w-full md:w-[600px] p-8">
-      <Tabs defaultValue="oneWay" className="w-full">
-        <TabsList className="flex justify-between space-x-5 md:space-x-0">
+    <div className="flex flex-col lg:flex-row justify-center items-start w-full lg:w-[660px] p-8 space-y-4 lg:space-y-0 lg:space-x-4">
+      <Tabs defaultValue="oneWay" className="w-full lg:w-auto flex-grow">
+        <TabsList className="flex justify-between space-x-5 lg:space-x-0">
           <TabsTrigger value="oneWay" className="flex-grow text-center">
             One Way
           </TabsTrigger>
@@ -40,12 +40,12 @@ const Flight: React.FC = () => {
         <TabsContent value="oneWay">
           <Card className="border-none">
             <CardContent className="space-y-2 p-0">
-              <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
-                <div className="w-full md:w-1/2">
+              <div className="flex flex-col space-y-2 lg:flex-row lg:space-x-2 lg:space-y-0">
+                <div className="w-full lg:w-1/2">
                   <Label htmlFor="departure">Departure</Label>
                   <Input id="departure" />
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="w-full lg:w-1/2">
                   <Label htmlFor="arrival">Arrival</Label>
                   <Input id="arrival" />
                 </div>
@@ -56,12 +56,12 @@ const Flight: React.FC = () => {
         <TabsContent value="roundTrip">
           <Card className="border-none">
             <CardContent className="space-y-2 p-0">
-              <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
-                <div className="w-full md:w-1/2">
+              <div className="flex flex-col space-y-2 lg:flex-row lg:space-x-2 lg:space-y-0">
+                <div className="w-full lg:w-1/2">
                   <Label htmlFor="departure">Departure</Label>
                   <Input id="departure" />
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="w-full lg:w-1/2">
                   <Label htmlFor="arrival">Arrival</Label>
                   <Input id="arrival" />
                 </div>
@@ -72,12 +72,12 @@ const Flight: React.FC = () => {
         <TabsContent value="multiCity">
           <Card className="border-none">
             <CardContent className="space-y-2 p-0">
-              <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
-                <div className="w-full md:w-1/2">
+              <div className="flex flex-col space-y-2 lg:flex-row lg:space-x-2 lg:space-y-0">
+                <div className="w-full lg:w-1/2">
                   <Label htmlFor="departure1">Departure</Label>
                   <Input id="departure1" />
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="w-full lg:w-1/2">
                   <Label htmlFor="arrival1">Arrival</Label>
                   <Input id="arrival1" />
                 </div>
@@ -86,7 +86,7 @@ const Flight: React.FC = () => {
           </Card>
         </TabsContent>
       </Tabs>
-      <div className="flex flex-col w-[180px] space-y-2 md:flex-row md:space-x-2 md:space-y-0 p-1">
+      <div className="flex flex-col lg:flex-row lg:space-x-2 space-y-2 lg:space-y-0 w-full lg:w-auto p-1">
         <SelectAge />
         <SelectEconomy />
       </div>
