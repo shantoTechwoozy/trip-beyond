@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center px-4 md:p-8 lg:p-10">
-      <p className="text-center text-justify max-w-lg md:max-w-none text-base md:text-lg lg:text-xl decoration-solid mt-10">
+      <p className="text-justify max-w-lg md:max-w-none text-base md:text-lg lg:text-xl decoration-solid mt-10">
         Unlock the extraordinary with Trip Beyond, your passport to unparalleled
         adventures. From secluded beaches to majestic peaks, our expert team
         crafts tailor-made journeys that redefine travel. Immerse yourself in
