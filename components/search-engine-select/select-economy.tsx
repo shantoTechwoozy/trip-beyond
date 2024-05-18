@@ -13,7 +13,7 @@ import {
 export function SelectEconomy() {
   return (
     <Select>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger>
         <SelectValue placeholder="Economy" />
       </SelectTrigger>
       <SelectContent>

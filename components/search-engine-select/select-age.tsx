@@ -40,7 +40,7 @@ export function SelectAge() {
 
   return (
     <Select>
-      <SelectTrigger className="w-full" onClick={() => setIsOpen(!isOpen)}>
+      <SelectTrigger  onClick={() => setIsOpen(!isOpen)}>
         {" "}
         {/* Toggle options visibility */}
         <SelectValue placeholder="Travellers" />
