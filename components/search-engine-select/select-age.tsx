@@ -43,7 +43,7 @@ export function SelectAge() {
       <SelectTrigger  onClick={() => setIsOpen(!isOpen)}>
         {" "}
         {/* Toggle options visibility */}
-        <SelectValue placeholder="Travellers" />
+        <SelectValue placeholder="Travellers" className="bg-slate-400"/>
         <span className="ml-2">{totalCount}</span>
       </SelectTrigger>
       {isOpen && ( // Render options content only if isOpen is true
