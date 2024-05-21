@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import Flight from "@/components/carousel-slides/flight";
