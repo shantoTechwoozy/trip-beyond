@@ -44,8 +44,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="relative h-screen bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+    <header className="relative  h-[680px] md:h-[450px] bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
         <div className="flex h-36 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -118,7 +117,7 @@ const Header: React.FC = () => {
             </Drawer>
           </div>
           <nav aria-label="Global" className="hidden md:flex items-center gap-8 text-sm">
-            <div className="text-gray-500 transition hover:text-gray-500/75">
+            <div className="text-gray-300 transition hover:text-gray-300/75">
               <Select>
                 <SelectTrigger className="w-[75px]">
                   <SelectValue placeholder="USD" />
