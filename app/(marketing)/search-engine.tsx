@@ -92,8 +92,8 @@ export default function SearchEngine() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:block top-24" />
-        <CarouselNext className="hidden sm:block top-24" />
+        <CarouselPrevious className="hidden lg:block top-24" />
+        <CarouselNext className="hidden lg:block top-24" />
       </Carousel>
     </div>
   );

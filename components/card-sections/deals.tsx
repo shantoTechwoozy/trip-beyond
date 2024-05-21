@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -25,8 +24,8 @@ export function DealsCard() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden sm:block" />
-      <CarouselNext className="hidden sm:block" />
+      <CarouselPrevious className="hidden lg:block" />
+<CarouselNext className="hidden lg:block top-24" />
     </Carousel>
   );
 }

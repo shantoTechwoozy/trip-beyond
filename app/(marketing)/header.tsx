@@ -55,7 +55,7 @@ const Header: React.FC = () => {
             </a>
           </div>
           <div className="flex items-center gap-4 md:hidden">
-            <Drawer>
+            <Drawer open={isMenuOpen} onOpenChange={setMenuOpen}>
               <DrawerTrigger asChild>
                 <Button
                   className="rounded-full bg-[#FF9C00] p-2 text-gray-600 transition hover:text-gray-600/75"
@@ -90,7 +90,6 @@ const Header: React.FC = () => {
                           </ClerkLoaded>
                         </div>
                       )}
-
                       <div>
                         <Button
                           className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
@@ -126,13 +125,12 @@ const Header: React.FC = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem value="BDT">Dollar</SelectItem>
-                    <SelectItem value="banana">BDT</SelectItem>
+                    <SelectItem value="USD">USD</SelectItem>
+                    <SelectItem value="BDT">BDT</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
             </div>
-
             {isClient && (
               <div>
                 <ClerkLoading>
@@ -152,13 +150,11 @@ const Header: React.FC = () => {
                 </ClerkLoaded>
               </div>
             )}
-
             <div>
               <Button className="h-9 font-bold" variant="custom">
                 Agent Login
               </Button>
             </div>
-
             <div className="text-gray-500 transition hover:text-gray-500/75">
               <div className="rounded-full bg-[#FF9C00] p-2">
                 <FaPhone className="text-1xl text-black" />
