@@ -1,11 +1,10 @@
+"use client"
 import * as React from "react";
 import { useState } from "react";
 import {
   Select,
   SelectContent,
   SelectGroup,
-  SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
