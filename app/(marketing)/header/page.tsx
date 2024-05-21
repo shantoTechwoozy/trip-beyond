@@ -116,7 +116,10 @@ const Header: React.FC = () => {
               </DrawerContent>
             </Drawer>
           </div>
-          <nav aria-label="Global" className="hidden md:flex items-center gap-8 text-sm">
+          <nav
+            aria-label="Global"
+            className="hidden md:flex items-center gap-8 text-sm"
+          >
             <div className="text-gray-300 transition hover:text-gray-300/75">
               <Select>
                 <SelectTrigger className="w-[75px]">

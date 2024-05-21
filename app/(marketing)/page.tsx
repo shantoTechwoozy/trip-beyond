@@ -46,15 +46,15 @@ export default function Home() {
         <h1 className="text-xl md:text-2xl lg:text-xl text-center font-bold mb-5 mt-8">
           Find Great Deals, Only for you
         </h1>
-        <DealsCard/>
+        <DealsCard />
         <h1 className="text-xl md:text-2xl lg:text-xl text-center font-bold mb-5 mt-20">
-        Exclusives from our partners
+          Exclusives from our partners
         </h1>
         <Exclusives />
         <h1 className="text-xl md:text-2xl lg:text-xl text-center font-bold mb-5 mt-20">
-        Favourite Destination Packages
+          Favourite Destination Packages
         </h1>
-        <FavouriteDesCard/>
+        <FavouriteDesCard />
       </div>
     </main>
   );

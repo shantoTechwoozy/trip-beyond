@@ -23,7 +23,7 @@ const Exclusives: React.FC = () => {
           className="rounded-[35px]"
         />
       </div>
-       {/* banner descriptions */}
+      {/* banner descriptions */}
       <div className="h-48 relative lg:col-span-2 flex items-center p-4">
         <div className="flex items-center justify-between w-full">
           <div>
@@ -33,20 +33,25 @@ const Exclusives: React.FC = () => {
               the readable content of a page when looking at its layout.
             </p>
           </div>
-          <Button variant="custom" className="ml-4 font-bold">Let&apos;s Go</Button>
-
+          <Button variant="custom" className="ml-4 font-bold">
+            Let&apos;s Go
+          </Button>
         </div>
       </div>
       <div className="h-48 relative flex items-center p-4">
         <div className="flex items-center justify-between w-full">
           <div>
-            <h3 className="text-xl font-bold mb-2">Flying from Delhi-London?</h3>
+            <h3 className="text-xl font-bold mb-2">
+              Flying from Delhi-London?
+            </h3>
             <p className="text-sm">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout.
             </p>
           </div>
-          <Button variant="custom" className="ml-4 font-bold">Book Now</Button>
+          <Button variant="custom" className="ml-4 font-bold">
+            Book Now
+          </Button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import * as React from "react";
 import { useState } from "react";
 import {
@@ -39,10 +39,10 @@ export function SelectAge() {
 
   return (
     <Select>
-      <SelectTrigger  onClick={() => setIsOpen(!isOpen)}>
+      <SelectTrigger onClick={() => setIsOpen(!isOpen)}>
         {" "}
         {/* Toggle options visibility */}
-        <SelectValue placeholder="Travellers" className="bg-slate-400"/>
+        <SelectValue placeholder="Travellers" className="bg-slate-400" />
         <span className="ml-2">{totalCount}</span>
       </SelectTrigger>
       {isOpen && ( // Render options content only if isOpen is true

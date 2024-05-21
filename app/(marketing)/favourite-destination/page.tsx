@@ -12,18 +12,20 @@ import packageData from "@/data-resources/fev-packages";
 import { Button } from "@/components/ui/button";
 
 const FavouriteDesCard: React.FC = () => {
-
   return (
     <Carousel className="w-full max-w-screen-lg mx-auto">
       <CarouselContent className="-ml-1">
         {packageData.map((deal) => (
-          <CarouselItem key={deal.id} className="pl-1 md:basis-1/2 lg:basis-1/4">
+          <CarouselItem
+            key={deal.id}
+            className="pl-1 md:basis-1/2 lg:basis-1/4"
+          >
             <div className="p-1">
               <Card className="relative h-[250px] sm:h-[250px] overflow-hidden">
                 <Image
                   src={deal.imageUrl}
                   alt={deal.title}
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="absolute inset-0 opacity-100 transition-opacity"
                 />
@@ -37,7 +39,9 @@ const FavouriteDesCard: React.FC = () => {
                 </CardContent>
               </Card>
             </div>
-            <h3 className="text-xl font-medium text-black text-center">{deal.title}</h3>
+            <h3 className="text-xl font-medium text-black text-center">
+              {deal.title}
+            </h3>
           </CarouselItem>
         ))}
       </CarouselContent>
