@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -7,19 +9,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image"; // Import the Image component
-import { dealsData } from "../../../data-resources/dealsData";
-import { Button } from "../../../components/ui/button";
+import Image from "next/image";
+import dealsData from "@/data-resources/dealsData";
+import { Button } from "@/components/ui/button";
 
-export function DealsCard() {
+const DealsCard: React.FC = () => {
   return (
     <Carousel className="w-full max-w-screen-lg mx-auto">
       <CarouselContent className="-ml-1">
-        {dealsData.map((deal, index) => (
+        {dealsData.map((deal) => (
           <CarouselItem key={deal.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card className="relative h-[250px] sm:h-[180px] overflow-hidden">
-                {/* Replace <img> with <Image /> */}
                 <Image
                   src={deal.imageUrl}
                   alt={deal.title}
@@ -46,4 +47,6 @@ export function DealsCard() {
       <CarouselNext className="hidden lg:block top-24" />
     </Carousel>
   );
-}
+};
+
+export default DealsCard;
