@@ -29,7 +29,7 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import SearchEngine from "./search-engine";
+import SearchEngine from "../search-engine/page";
 
 const Header: React.FC = () => {
   const [isClient, setIsClient] = useState(false);

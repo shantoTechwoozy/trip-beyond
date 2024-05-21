@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import { DealsCard } from "@/components/card-sections/deals";
+import { DealsCard } from "./deals/page";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import Exclusives from "./exclusives/page";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -44,6 +45,10 @@ export default function Home() {
           Find Great Deals, Only for you
         </h1>
         <DealsCard />
+        <h1 className="text-xl md:text-2xl lg:text-xl text-center font-bold mb-5 mt-20">
+        Exclusives from our partners
+        </h1>
+        <Exclusives />
       </div>
     </main>
   );

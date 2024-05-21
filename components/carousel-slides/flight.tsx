@@ -87,7 +87,7 @@ const Flight: React.FC = () => {
         </TabsContent>
       </Tabs>
       <div className="flex flex-col lg:flex-row justify-center lg:justify-start lg:space-x-2 space-y-2 lg:space-y-0 w-full lg:w-auto p-1 ">
-        <SelectAge/>
+        <SelectAge />
         <SelectEconomy />
       </div>
     </div>

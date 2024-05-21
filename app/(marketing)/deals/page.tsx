@@ -8,8 +8,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image"; // Import the Image component
-import { dealsData } from "./dealsData";
-import { Button } from "../ui/button";
+import { dealsData } from "../../../data-resources/dealsData";
+import { Button } from "../../../components/ui/button";
 
 export function DealsCard() {
   return (
