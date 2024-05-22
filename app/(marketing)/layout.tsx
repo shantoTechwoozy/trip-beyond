@@ -3,7 +3,7 @@ import { Nunito } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "./header/page";
 import "../globals.css";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/footer";
 
 const font = Nunito({ subsets: ["latin"] });
 
