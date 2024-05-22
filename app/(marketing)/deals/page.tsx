@@ -28,7 +28,7 @@ const DealsCard: React.FC = () => {
                   src={deal.imageUrl}
                   alt={deal.title}
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                   className="absolute inset-0 opacity-100 transition-opacity"
                 />
                 <CardContent className="absolute inset-0 flex flex-col items-start justify-end p-6 bg-black bg-opacity-40 transition-opacity">

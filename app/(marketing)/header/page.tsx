@@ -44,13 +44,18 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="relative  h-[680px] md:h-[450px] bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
+    <header className="relative h-[750px] md:h-[650px] lg:h-[450px] bg-[url('/menubar/banner.jpg')] bg-no-repeat bg-cover bg-center">
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
-        <div className="flex h-36 items-center justify-between">
+        <div className="flex h-24 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600">
+            <a className="block">
               <span className="sr-only">Home</span>
-              <Image src="/logo.png" height={60} width={180} alt="logo" />
+              <Image
+                src="/menubar/logo.png"
+                height={60}
+                width={180}
+                alt="logo"
+              />
             </a>
           </div>
           <div className="flex items-center gap-4 md:hidden">

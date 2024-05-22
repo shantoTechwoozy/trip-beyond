@@ -7,19 +7,19 @@ const Exclusives: React.FC = () => {
       {/* banner images */}
       <div className="h-64 rounded-[35px] relative bg-gray-200 lg:col-span-2">
         <Image
-          src="/exclusive1.jpg"
+          src="/exclusive/exclusive1.jpg"
           alt=""
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="rounded-[35px]"
         />
       </div>
       <div className="h-64 rounded-[35px] relative bg-gray-200">
         <Image
-          src="/exclusive2.jpg"
+          src="/exclusive/exclusive2.jpg"
           alt=""
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="rounded-[35px]"
         />
       </div>

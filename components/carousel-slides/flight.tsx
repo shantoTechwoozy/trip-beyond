@@ -1,21 +1,5 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -24,23 +8,32 @@ import { SelectEconomy } from "../search-engine-select/select-economy";
 
 const Flight: React.FC = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-start w-full lg:w-[660px] p-8 space-y-4 lg:space-y-0 lg:space-x-4">
-      <Tabs defaultValue="oneWay" className="w-full lg:w-auto flex-grow">
-        <TabsList className="flex justify-between space-x-5 lg:space-x-0">
-          <TabsTrigger value="oneWay" className="flex-grow text-center">
+    <div className="flex flex-col lg:flex-row justify-center items-start w-full lg:w-[660px] p-10 space-y-4 lg:space-y-0 lg:space-x-4">
+      <Tabs defaultValue="oneWay" className="w-full lg:flex-grow">
+        <TabsList className="flex justify-between space-x-1 lg:space-x-0">
+          <TabsTrigger
+            value="oneWay"
+            className="flex-grow text-center px-1 py-2"
+          >
             One Way
           </TabsTrigger>
-          <TabsTrigger value="roundTrip" className="flex-grow text-center">
+          <TabsTrigger
+            value="roundTrip"
+            className="flex-grow text-center px-1 py-2"
+          >
             Round Trip
           </TabsTrigger>
-          <TabsTrigger value="multiCity" className="flex-grow text-center">
+          <TabsTrigger
+            value="multiCity"
+            className="flex-grow text-center px-1 py-2"
+          >
             Multi-City
           </TabsTrigger>
         </TabsList>
         <TabsContent value="oneWay">
           <Card className="border-none">
-            <CardContent className="space-y-2 p-0">
-              <div className="flex flex-col space-y-2 lg:flex-row lg:space-x-2 lg:space-y-0">
+            <CardContent className="space-y-4 p-0">
+              <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
                 <div className="w-full lg:w-1/2">
                   <Label htmlFor="departure">Departure</Label>
                   <Input id="departure" />
@@ -55,8 +48,8 @@ const Flight: React.FC = () => {
         </TabsContent>
         <TabsContent value="roundTrip">
           <Card className="border-none">
-            <CardContent className="space-y-2 p-0">
-              <div className="flex flex-col space-y-2 lg:flex-row lg:space-x-2 lg:space-y-0">
+            <CardContent className="space-y-4 p-0">
+              <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
                 <div className="w-full lg:w-1/2">
                   <Label htmlFor="departure">Departure</Label>
                   <Input id="departure" />
@@ -71,8 +64,8 @@ const Flight: React.FC = () => {
         </TabsContent>
         <TabsContent value="multiCity">
           <Card className="border-none">
-            <CardContent className="space-y-2 p-0">
-              <div className="flex flex-col space-y-2 lg:flex-row lg:space-x-2 lg:space-y-0">
+            <CardContent className="space-y-4 p-0">
+              <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
                 <div className="w-full lg:w-1/2">
                   <Label htmlFor="departure1">Departure</Label>
                   <Input id="departure1" />
@@ -86,7 +79,7 @@ const Flight: React.FC = () => {
           </Card>
         </TabsContent>
       </Tabs>
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-start lg:space-x-2 space-y-2 lg:space-y-0 w-full lg:w-auto p-1 ">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-start lg:space-x-4 space-y-4 lg:space-y-0 w-full lg:w-auto">
         <SelectAge />
         <SelectEconomy />
       </div>
