@@ -26,6 +26,7 @@ const FavoriteDesCard: React.FC = () => {
                   src={deal.imageUrl}
                   alt={deal.title}
                   fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: "cover" }}
                   className="absolute inset-0 opacity-100 transition-opacity"
                 />

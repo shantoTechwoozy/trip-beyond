@@ -8,8 +8,10 @@ const QRCodeComponent = () => {
         src="/qrBanner/qrcode.png"
         alt="QR code"
         fill
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
         style={{ objectFit: "cover" }}
         className="rounded-[35px]"
+        priority
       />
       <div className="absolute inset-0 flex flex-col justify-center items-start p-4 sm:p-6 bg-black bg-opacity-40 rounded-[35px] transition-opacity">
         <div className="text-orange-400 text-left lg:ml-10">

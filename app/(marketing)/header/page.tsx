@@ -54,7 +54,9 @@ const Header: React.FC = () => {
                 src="/menubar/logo.png"
                 height={60}
                 width={180}
+                style={{ height: "auto", width: "auto" }}
                 alt="logo"
+                priority
               />
             </a>
           </div>
@@ -71,7 +73,14 @@ const Header: React.FC = () => {
               <DrawerContent>
                 <div className="mx-auto w-full max-w-sm">
                   <DrawerHeader>
-                    <Image src="/logo.png" height={90} width={90} alt="logo" />
+                    <Image
+                      src="/menubar/logo.png"
+                      height={60}
+                      width={180}
+                      style={{ height: "auto", width: "auto" }}
+                      alt="logo"
+                      priority
+                    />
                   </DrawerHeader>
                   <div className="p-4 pb-0">
                     <div className="space-y-4">

@@ -8,8 +8,9 @@ const Exclusives: React.FC = () => {
       <div className="h-64 rounded-[35px] relative bg-gray-200 lg:col-span-2">
         <Image
           src="/exclusive/exclusive1.jpg"
-          alt=""
+          alt="Exclusive 1"
           fill
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
           className="rounded-[35px]"
         />
@@ -17,8 +18,9 @@ const Exclusives: React.FC = () => {
       <div className="h-64 rounded-[35px] relative bg-gray-200">
         <Image
           src="/exclusive/exclusive2.jpg"
-          alt=""
+          alt="Exclusive 2"
           fill
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
           className="rounded-[35px]"
         />
