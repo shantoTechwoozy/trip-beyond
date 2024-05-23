@@ -12,15 +12,10 @@ import { motion } from "framer-motion"; // for animations
 const Hotel: React.FC = () => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [isSwapped, setIsSwapped] = useState(false);
-
   const handleSwap = () => {
-    setIsSwapped((prev) => !prev);
-    setFrom((prevFrom) => {
-      const temp = to;
-      setTo(prevFrom);
-      return temp;
-    });
+    const temp = from;
+    setFrom(to);
+    setTo(temp);
   };
 
   return (
@@ -50,103 +45,48 @@ const Hotel: React.FC = () => {
           <Card className="border-none">
             <CardContent className="space-y-4 p-1">
               <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
-                {isSwapped ? (
-                  <>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label htmlFor="to" className="text-orange-400 font-bold">
-                        To
-                      </Label>
-                      <Input
-                        id="to"
-                        value={to}
-                        onChange={(e) => setTo(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                    <div className="self-center lg:self-auto mt-4 lg:mt-0">
-                      <MdSwapHorizontalCircle
-                        size={24}
-                        onClick={handleSwap}
-                        className="cursor-pointer text-orange-400 mt-8"
-                        aria-label="Swap From and To"
-                      />
-                    </div>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label
-                        htmlFor="from"
-                        className="text-orange-400 font-bold"
-                      >
-                        From
-                      </Label>
-                      <Input
-                        id="from"
-                        value={from}
-                        onChange={(e) => setFrom(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                  </>
-                ) : (
-                  <>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label
-                        htmlFor="from"
-                        className="text-orange-400 font-bold"
-                      >
-                        From
-                      </Label>
-                      <Input
-                        id="from"
-                        value={from}
-                        onChange={(e) => setFrom(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                    <div className="self-center lg:self-auto mt-4 lg:mt-0">
-                      <MdSwapHorizontalCircle
-                        size={24}
-                        onClick={handleSwap}
-                        className="cursor-pointer text-orange-400 mt-8"
-                        aria-label="Swap From and To"
-                      />
-                    </div>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label htmlFor="to" className="text-orange-400 font-bold">
-                        To
-                      </Label>
-                      <Input
-                        id="to"
-                        value={to}
-                        onChange={(e) => setTo(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                  </>
-                )}
+                <motion.div
+                  className="w-full lg:w-1/2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Label htmlFor="from" className="text-orange-400 font-bold">
+                    From
+                  </Label>
+                  <Input
+                    id="from"
+                    value={from}
+                    onChange={(e) => setFrom(e.target.value)}
+                    placeholder="Type city name"
+                    className="border-none p-0 focus-visible:ring-transparent"
+                  />
+                </motion.div>
+                <div className="self-center lg:self-auto mt-4 lg:mt-0">
+                  <MdSwapHorizontalCircle
+                    size={24}
+                    onClick={handleSwap}
+                    className="cursor-pointer text-orange-400 mt-8"
+                    aria-label="Swap From and To"
+                  />
+                </div>
+                <motion.div
+                  className="w-full lg:w-1/2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Label htmlFor="to" className="text-orange-400 font-bold">
+                    To
+                  </Label>
+                  <Input
+                    id="to"
+                    value={to}
+                    onChange={(e) => setTo(e.target.value)}
+                    placeholder="Type city name"
+                    className="border-none p-0 focus-visible:ring-transparent"
+                  />
+                </motion.div>
               </div>
             </CardContent>
           </Card>
@@ -155,103 +95,48 @@ const Hotel: React.FC = () => {
           <Card className="border-none">
             <CardContent className="space-y-4 p-1">
               <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
-                {isSwapped ? (
-                  <>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label htmlFor="to" className="text-orange-400 font-bold">
-                        To
-                      </Label>
-                      <Input
-                        id="to"
-                        value={to}
-                        onChange={(e) => setTo(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                    <div className="self-center lg:self-auto mt-4 lg:mt-0">
-                      <MdSwapHorizontalCircle
-                        size={24}
-                        onClick={handleSwap}
-                        className="cursor-pointer text-orange-400 mt-8"
-                        aria-label="Swap From and To"
-                      />
-                    </div>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label
-                        htmlFor="from"
-                        className="text-orange-400 font-bold"
-                      >
-                        From
-                      </Label>
-                      <Input
-                        id="from"
-                        value={from}
-                        onChange={(e) => setFrom(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                  </>
-                ) : (
-                  <>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label
-                        htmlFor="from"
-                        className="text-orange-400 font-bold"
-                      >
-                        From
-                      </Label>
-                      <Input
-                        id="from"
-                        value={from}
-                        onChange={(e) => setFrom(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                    <div className="self-center lg:self-auto mt-4 lg:mt-0">
-                      <MdSwapHorizontalCircle
-                        size={24}
-                        onClick={handleSwap}
-                        className="cursor-pointer text-orange-400 mt-8"
-                        aria-label="Swap From and To"
-                      />
-                    </div>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label htmlFor="to" className="text-orange-400 font-bold">
-                        To
-                      </Label>
-                      <Input
-                        id="to"
-                        value={to}
-                        onChange={(e) => setTo(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                  </>
-                )}
+                <motion.div
+                  className="w-full lg:w-1/2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Label htmlFor="from" className="text-orange-400 font-bold">
+                    From
+                  </Label>
+                  <Input
+                    id="from"
+                    value={from}
+                    onChange={(e) => setFrom(e.target.value)}
+                    placeholder="Type city name"
+                    className="border-none p-0 focus-visible:ring-transparent"
+                  />
+                </motion.div>
+                <div className="self-center lg:self-auto mt-4 lg:mt-0">
+                  <MdSwapHorizontalCircle
+                    size={24}
+                    onClick={handleSwap}
+                    className="cursor-pointer text-orange-400 mt-8"
+                    aria-label="Swap From and To"
+                  />
+                </div>
+                <motion.div
+                  className="w-full lg:w-1/2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Label htmlFor="to" className="text-orange-400 font-bold">
+                    To
+                  </Label>
+                  <Input
+                    id="to"
+                    value={to}
+                    onChange={(e) => setTo(e.target.value)}
+                    placeholder="Type city name"
+                    className="border-none p-0 focus-visible:ring-transparent"
+                  />
+                </motion.div>
               </div>
             </CardContent>
           </Card>
@@ -260,103 +145,48 @@ const Hotel: React.FC = () => {
           <Card className="border-none">
             <CardContent className="space-y-4 p-1">
               <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
-                {isSwapped ? (
-                  <>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label htmlFor="to" className="text-orange-400 font-bold">
-                        To
-                      </Label>
-                      <Input
-                        id="to"
-                        value={to}
-                        onChange={(e) => setTo(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                    <div className="self-center lg:self-auto mt-4 lg:mt-0">
-                      <MdSwapHorizontalCircle
-                        size={24}
-                        onClick={handleSwap}
-                        className="cursor-pointer text-orange-400 mt-8"
-                        aria-label="Swap From and To"
-                      />
-                    </div>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label
-                        htmlFor="from"
-                        className="text-orange-400 font-bold"
-                      >
-                        From
-                      </Label>
-                      <Input
-                        id="from"
-                        value={from}
-                        onChange={(e) => setFrom(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                  </>
-                ) : (
-                  <>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label
-                        htmlFor="from"
-                        className="text-orange-400 font-bold"
-                      >
-                        From
-                      </Label>
-                      <Input
-                        id="from"
-                        value={from}
-                        onChange={(e) => setFrom(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                    <div className="self-center lg:self-auto mt-4 lg:mt-0">
-                      <MdSwapHorizontalCircle
-                        size={24}
-                        onClick={handleSwap}
-                        className="cursor-pointer text-orange-400 mt-8"
-                        aria-label="Swap From and To"
-                      />
-                    </div>
-                    <motion.div
-                      className="w-full lg:w-1/2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Label htmlFor="to" className="text-orange-400 font-bold">
-                        To
-                      </Label>
-                      <Input
-                        id="to"
-                        value={to}
-                        onChange={(e) => setTo(e.target.value)}
-                        placeholder="Type city name"
-                        className="border-none p-0 focus-visible:ring-transparent"
-                      />
-                    </motion.div>
-                  </>
-                )}
+                <motion.div
+                  className="w-full lg:w-1/2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Label htmlFor="from" className="text-orange-400 font-bold">
+                    From
+                  </Label>
+                  <Input
+                    id="from"
+                    value={from}
+                    onChange={(e) => setFrom(e.target.value)}
+                    placeholder="Type city name"
+                    className="border-none p-0 focus-visible:ring-transparent"
+                  />
+                </motion.div>
+                <div className="self-center lg:self-auto mt-4 lg:mt-0">
+                  <MdSwapHorizontalCircle
+                    size={24}
+                    onClick={handleSwap}
+                    className="cursor-pointer text-orange-400 mt-8"
+                    aria-label="Swap From and To"
+                  />
+                </div>
+                <motion.div
+                  className="w-full lg:w-1/2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Label htmlFor="to" className="text-orange-400 font-bold">
+                    To
+                  </Label>
+                  <Input
+                    id="to"
+                    value={to}
+                    onChange={(e) => setTo(e.target.value)}
+                    placeholder="Type city name"
+                    className="border-none p-0 focus-visible:ring-transparent"
+                  />
+                </motion.div>
               </div>
             </CardContent>
           </Card>
