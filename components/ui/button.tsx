@@ -9,6 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        swap:
+        "rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black",
         common:
           "rounded-full  hover:bg-tranparent active:border-b-0 text-white px-4 py-4",
         custom:

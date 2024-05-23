@@ -42,7 +42,7 @@ export function SelectAge() {
       <SelectTrigger onClick={() => setIsOpen(!isOpen)}>
         {" "}
         {/* Toggle options visibility */}
-        <SelectValue placeholder="Travellers" className="bg-slate-400" />
+        <SelectValue placeholder="Age" className="bg-slate-100" />
         <span className="ml-2">{totalCount}</span>
       </SelectTrigger>
       {isOpen && ( // Render options content only if isOpen is true
@@ -51,7 +51,7 @@ export function SelectAge() {
             <div className="flex flex-col gap-4 p-5">
               <div className="flex justify-between items-center gap-10">
                 <div>
-                  <div className="mb-1">Adults</div>
+                  <div className="mb-1 ">Adults</div>
                   <div className="text-sm text-gray-500">12 years & above</div>
                 </div>
                 <div className="flex items-center space-x-2">
