@@ -50,14 +50,14 @@ const Header: React.FC = () => {
           <div className="flex-1 md:flex md:items-center md:gap-12">
             <a className="block">
               <span className="sr-only">Home</span>
-              <Image
-                src="/menubar/logo.png"
-                height={60}
-                width={180}
-                style={{ height: "auto", width: "auto" }}
-                alt="logo"
-                priority
-              />
+              <div className="relative h-30 w-45">
+                <Image
+                  src="/menubar/logo.png"
+                  height={60}
+                  width={180}
+                  alt="logo"
+                />
+              </div>
             </a>
           </div>
           <div className="flex items-center gap-4 md:hidden">
@@ -77,9 +77,7 @@ const Header: React.FC = () => {
                       src="/menubar/logo.png"
                       height={60}
                       width={180}
-                      style={{ height: "auto", width: "auto" }}
                       alt="logo"
-                      priority
                     />
                   </DrawerHeader>
                   <div className="p-4 pb-0">
