@@ -76,7 +76,7 @@ const Flight: React.FC = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Label htmlFor="to" className="text-orange-400 font-bold">
+                  <Label htmlFor="to" className="text-orange-400 font-bold md:ml-16">
                     To
                   </Label>
                   <Input
@@ -84,7 +84,7 @@ const Flight: React.FC = () => {
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     placeholder="Type city name"
-                    className="border-none p-0 focus-visible:ring-transparent"
+                    className="border-none p-0  focus-visible:ring-transparent md:ml-16" 
                   />
                 </motion.div>
               </div>
