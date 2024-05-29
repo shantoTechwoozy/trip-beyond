@@ -39,25 +39,30 @@ export function SelectAge() {
 
   return (
     <Select>
-      <SelectTrigger onClick={() => setIsOpen(!isOpen)}>
-        {" "}
-        {/* Toggle options visibility */}
+      <SelectTrigger
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full lg:w-auto border-2 border-gray-300 md:border-0 hover:border-orange-400 rounded-md p-2 bg-slate-100 md:bg-transparent"
+      >
         <SelectValue placeholder="Age" className="bg-slate-100" />
         <span className="ml-2">{totalCount}</span>
       </SelectTrigger>
-      {isOpen && ( // Render options content only if isOpen is true
-        <SelectContent>
+      {isOpen && (
+        <SelectContent className="w-full lg:w-auto">
           <SelectGroup>
             <div className="flex flex-col gap-4 p-5">
               <div className="flex justify-between items-center gap-10">
                 <div>
-                  <div className="mb-1 ">Adults</div>
+                  <div className="mb-1">Adults</div>
                   <div className="text-sm text-gray-500">12 years & above</div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button onClick={decrement(setAdultCount)}>-</Button>
+                  <Button size="sm" onClick={decrement(setAdultCount)}>
+                    -
+                  </Button>
                   <span>{adultCount}</span>
-                  <Button onClick={increment(setAdultCount)}>+</Button>
+                  <Button size="sm" onClick={increment(setAdultCount)}>
+                    +
+                  </Button>
                 </div>
               </div>
               <div className="flex justify-between items-center">
@@ -68,9 +73,13 @@ export function SelectAge() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button onClick={decrement(setChildrenCount)}>-</Button>
+                  <Button size="sm" onClick={decrement(setChildrenCount)}>
+                    -
+                  </Button>
                   <span>{childrenCount}</span>
-                  <Button onClick={increment(setChildrenCount)}>+</Button>
+                  <Button size="sm" onClick={increment(setChildrenCount)}>
+                    +
+                  </Button>
                 </div>
               </div>
               <div className="flex justify-between items-center">
@@ -79,9 +88,13 @@ export function SelectAge() {
                   <div className="text-sm text-gray-500">From 2 to under 5</div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button onClick={decrement(setKidsCount)}>-</Button>
+                  <Button size="sm" onClick={decrement(setKidsCount)}>
+                    -
+                  </Button>
                   <span>{kidsCount}</span>
-                  <Button onClick={increment(setKidsCount)}>+</Button>
+                  <Button size="sm" onClick={increment(setKidsCount)}>
+                    +
+                  </Button>
                 </div>
               </div>
               <div className="flex justify-between items-center">
@@ -90,16 +103,23 @@ export function SelectAge() {
                   <div className="text-sm text-gray-500">Under 2 years</div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button onClick={decrement(setInfantsCount)}>-</Button>
+                  <Button size="sm" onClick={decrement(setInfantsCount)}>
+                    -
+                  </Button>
                   <span>{infantsCount}</span>
-                  <Button onClick={increment(setInfantsCount)}>+</Button>
+                  <Button size="sm" onClick={increment(setInfantsCount)}>
+                    +
+                  </Button>
                 </div>
               </div>
             </div>
             <div className="flex justify-center space-x-2 p-2">
-              <Button onClick={resetCounts}>Reset</Button>
-              <Button onClick={handleDoneClick}>Done</Button>{" "}
-              {/* Call handleDoneClick to close options */}
+              <Button size="sm" onClick={resetCounts}>
+                Reset
+              </Button>
+              <Button size="sm" onClick={handleDoneClick}>
+                Done
+              </Button>
             </div>
           </SelectGroup>
         </SelectContent>

@@ -62,11 +62,11 @@ const Flight: React.FC = () => {
                     className="border-none p-0 focus-visible:ring-transparent"
                   />
                 </motion.div>
-                <div className="self-center lg:self-auto mt-4 lg:mt-0">
+                <div className="self-center lg:self-auto">
                   <MdSwapHorizontalCircle
                     size={24}
                     onClick={handleSwap}
-                    className="cursor-pointer text-orange-400 mt-8"
+                    className="cursor-pointer text-orange-400 lg:mt-8"
                     aria-label="Swap From and To"
                   />
                 </div>
@@ -76,7 +76,10 @@ const Flight: React.FC = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Label htmlFor="to" className="text-orange-400 font-bold md:ml-16">
+                  <Label
+                    htmlFor="to"
+                    className="text-orange-400 font-bold md:ml-16"
+                  >
                     To
                   </Label>
                   <Input
@@ -84,7 +87,7 @@ const Flight: React.FC = () => {
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     placeholder="Type city name"
-                    className="border-none p-0  focus-visible:ring-transparent md:ml-16" 
+                    className="border-none p-0  focus-visible:ring-transparent md:ml-16"
                   />
                 </motion.div>
               </div>
@@ -116,7 +119,7 @@ const Flight: React.FC = () => {
                   <MdSwapHorizontalCircle
                     size={24}
                     onClick={handleSwap}
-                    className="cursor-pointer text-orange-400 mt-8"
+                    className="cursor-pointer text-orange-400 lg:mt-8"
                     aria-label="Swap From and To"
                   />
                 </div>
@@ -126,7 +129,10 @@ const Flight: React.FC = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Label htmlFor="to" className="text-orange-400 font-bold">
+                  <Label
+                    htmlFor="to"
+                    className="text-orange-400 font-bold md:ml-16"
+                  >
                     To
                   </Label>
                   <Input
@@ -134,7 +140,7 @@ const Flight: React.FC = () => {
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     placeholder="Type city name"
-                    className="border-none p-0 focus-visible:ring-transparent"
+                    className="border-none p-0 focus-visible:ring-transparent md:ml-16"
                   />
                 </motion.div>
               </div>
@@ -166,7 +172,7 @@ const Flight: React.FC = () => {
                   <MdSwapHorizontalCircle
                     size={24}
                     onClick={handleSwap}
-                    className="cursor-pointer text-orange-400 mt-8"
+                    className="cursor-pointer text-orange-400 lg:mt-8"
                     aria-label="Swap From and To"
                   />
                 </div>
@@ -176,7 +182,10 @@ const Flight: React.FC = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Label htmlFor="to" className="text-orange-400 font-bold">
+                  <Label
+                    htmlFor="to"
+                    className="text-orange-400 font-bold md:ml-16"
+                  >
                     To
                   </Label>
                   <Input
@@ -184,7 +193,7 @@ const Flight: React.FC = () => {
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     placeholder="Type city name"
-                    className="border-none p-0 focus-visible:ring-transparent"
+                    className="border-none p-0 focus-visible:ring-transparent md:ml-16"
                   />
                 </motion.div>
               </div>
@@ -193,7 +202,7 @@ const Flight: React.FC = () => {
         </TabsContent>
       </Tabs>
       <div className="flex flex-col lg:flex-row justify-center lg:justify-start lg:space-x-4 space-y-4 lg:space-y-0 w-full lg:w-auto">
-        <SelectAge />
+        <SelectAge/>
         <SelectEconomy />
       </div>
     </div>
