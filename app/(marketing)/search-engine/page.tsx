@@ -88,7 +88,7 @@ export default function SearchEngine() {
           {CarouselSlides.map((Slide, index) => (
             <CarouselItem key={index}>
               <Card>
-              {/* className="rounded-lg md:rounded-3xl */}
+                {/* className="rounded-lg md:rounded-3xl */}
                 <Slide />
               </Card>
             </CarouselItem>
