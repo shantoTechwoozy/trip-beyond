@@ -7,6 +7,7 @@ import { TfiTwitter } from "react-icons/tfi";
 import { TfiInstagram } from "react-icons/tfi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { CiYoutube } from "react-icons/ci";
+
 const Footer = () => {
   return (
     <footer className="bg-[#1e2755] text-orange-400">
@@ -111,10 +112,9 @@ const Footer = () => {
                 info@tripbeyond.com
               </a>
             </li>
-
             <li>
               <a
-                href="mailto:info@tripbeyond.com"
+                href="#"
                 className="text-gray-300 transition hover:opacity-75"
               >
                 We accept :
@@ -137,7 +137,7 @@ const Footer = () => {
                 Social Media
               </a>
             </li>
-            <li className="flex gap-4">
+            <li className="flex flex-wrap gap-4">
               <a
                 href="#"
                 className="text-gray-300 transition hover:opacity-75"
@@ -178,20 +178,20 @@ const Footer = () => {
               <a href="#" className="text-gray-300 transition hover:opacity-75">
                 Newsletter
               </a>
-              <div className="flex mt-2">
+              <div className="flex flex-col sm:flex-row mt-2">
                 <Input
-                  className="w-[150px] sm:w-[200px]"
+                  className="w-full sm:w-auto sm:flex-1"
                   placeholder="Email ID"
                 />
                 <Button
-                  className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-3 sm:px-4 py-2 ml-2"
+                  className="mt-2 sm:mt-0 sm:ml-2 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-3 sm:px-4 py-2"
                   variant="custom"
                 >
                   Subscribe
                 </Button>
               </div>
             </li>
-            <li className="w-[400px]">
+            <li className="w-full sm:w-[400px]">
               <a
                 href="mailto:info@tripbeyond.com"
                 className="text-gray-300 transition hover:opacity-75"
@@ -201,7 +201,7 @@ const Footer = () => {
                   height={240}
                   width={720}
                   alt="logo"
-                  className="h-32 w-100"
+                  className="h-32 w-full"
                 />
               </a>
             </li>
