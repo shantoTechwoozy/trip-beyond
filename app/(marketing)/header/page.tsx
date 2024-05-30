@@ -74,11 +74,7 @@ const Header: React.FC = () => {
                   </DrawerHeader>
                   <div className="p-4 pb-0">
                     <div className="space-y-4">
-                      {isClient && (
-                        <div>
-                          Registration
-                        </div>
-                      )}
+                      {isClient && <div>Registration</div>}
                       <div>
                         <Button
                           className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
@@ -123,11 +119,7 @@ const Header: React.FC = () => {
                 </SelectContent>
               </Select>
             </div>
-            {isClient && (
-              <div>
-               Registration
-              </div>
-            )}
+            {isClient && <div>Registration</div>}
             <div>
               <Button className="h-9 font-bold" variant="custom">
                 Agent Login

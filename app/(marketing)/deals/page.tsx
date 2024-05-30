@@ -39,7 +39,7 @@ const DealsCard: React.FC = () => {
                   <p className="mt-2 text-xs text-white">{deal.description}</p>
                   <Button
                     variant="custom"
-                    className="mt-3 inline-block px-5 py-3 tracking-wide"
+                    className="mt-3 font-bold inline-block px-5 py-3 tracking-wide"
                   >
                     Book Now
                   </Button>
@@ -49,8 +49,8 @@ const DealsCard: React.FC = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden lg:block" />
-      <CarouselNext className="hidden lg:block top-24" />
+      <CarouselPrevious className="bg-slate-500 hidden lg:block" />
+      <CarouselNext className="bg-slate-500 hidden lg:block top-24" />
     </Carousel>
   );
 };

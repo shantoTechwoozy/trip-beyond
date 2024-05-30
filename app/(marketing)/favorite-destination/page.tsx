@@ -18,7 +18,7 @@ const FavoriteDesCard: React.FC = () => {
         {packageData.map((deal) => (
           <CarouselItem
             key={deal.id}
-            className="pl-1 md:basis-1/2 lg:basis-1/4"
+            className="pl-1 md:basis-1/2 lg:basis-1/3"
           >
             <div className="p-1">
               <Card className="relative h-[250px] sm:h-[250px] overflow-hidden">
@@ -30,24 +30,24 @@ const FavoriteDesCard: React.FC = () => {
                   style={{ objectFit: "cover" }}
                   className="absolute inset-0 opacity-100 transition-opacity"
                 />
-                <CardContent className="absolute inset-0 flex flex-col justify-end items-center p-6 bg-black bg-opacity-40 transition-opacity">
+                <CardContent className="absolute inset-0 flex flex-col justify-end items-center p-6 bg-black bg-opacity-5 transition-opacity">
                   <Button
                     variant="custom"
-                    className="mt-auto mb-4 inline-block px-5 py-3 tracking-wide"
+                    className="mt-auto font-bold mb-4 inline-block px-5 py-3 tracking-wide"
                   >
                     Plan Trip
                   </Button>
                 </CardContent>
               </Card>
             </div>
-            <h3 className="text-xl font-medium text-black text-center">
+            <h3 className="text-md font-medium text-black text-center">
               {deal.title}
             </h3>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden lg:block top-32" />
-      <CarouselNext className="hidden lg:block top-32" />
+      <CarouselPrevious className="bg-slate-500 hidden lg:block top-32" />
+      <CarouselNext className="bg-slate-500 hidden lg:block top-32" />
     </Carousel>
   );
 };

@@ -26,7 +26,7 @@ const Exclusives: React.FC = () => {
         />
       </div>
       {/* banner descriptions */}
-      <div className="h-48 relative lg:col-span-2 flex items-center p-4">
+      <div className="h-48 relative lg:col-span-2 flex items-start p-4">
         <div className="flex items-center justify-between w-full">
           <div>
             <h3 className="text-xl font-bold mb-2">Last minute Summer Trip</h3>
@@ -41,7 +41,7 @@ const Exclusives: React.FC = () => {
         </div>
       </div>
       <div className="h-48 relative flex items-center p-4">
-        <div className="flex items-center justify-between w-full">
+        <div className="flex item-start justify-between w-full">
           <div>
             <h3 className="text-xl font-bold mb-2">
               Flying from Delhi-London?
@@ -51,7 +51,7 @@ const Exclusives: React.FC = () => {
               the readable content of a page when looking at its layout.
             </p>
           </div>
-          <Button variant="custom" className="ml-4 font-bold">
+          <Button variant="custom" className="ml-4 mt-5 font-bold">
             Book Now
           </Button>
         </div>
