@@ -78,7 +78,7 @@ const Transportation: React.FC = () => {
                 >
                   <Label
                     htmlFor="to"
-                    className="text-orange-400 font-bold md:ml-16"
+                    className="text-orange-400 font-bold lg:ml-16"
                   >
                     To
                   </Label>
@@ -87,7 +87,7 @@ const Transportation: React.FC = () => {
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     placeholder="Type city name"
-                    className="border-none p-0  focus-visible:ring-transparent md:ml-16"
+                    className="border-none p-0  focus-visible:ring-transparent lg:ml-16"
                   />
                 </motion.div>
               </div>
@@ -131,7 +131,7 @@ const Transportation: React.FC = () => {
                 >
                   <Label
                     htmlFor="to"
-                    className="text-orange-400 font-bold md:ml-16"
+                    className="text-orange-400 font-bold lg:ml-16"
                   >
                     To
                   </Label>
@@ -140,7 +140,7 @@ const Transportation: React.FC = () => {
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     placeholder="Type city name"
-                    className="border-none p-0 focus-visible:ring-transparent md:ml-16"
+                    className="border-none p-0 focus-visible:ring-transparent lg:ml-16"
                   />
                 </motion.div>
               </div>
@@ -184,7 +184,7 @@ const Transportation: React.FC = () => {
                 >
                   <Label
                     htmlFor="to"
-                    className="text-orange-400 font-bold md:ml-16"
+                    className="text-orange-400 font-bold lg:ml-16"
                   >
                     To
                   </Label>
@@ -193,7 +193,7 @@ const Transportation: React.FC = () => {
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     placeholder="Type city name"
-                    className="border-none p-0 focus-visible:ring-transparent md:ml-16"
+                    className="border-none p-0 focus-visible:ring-transparent lg:ml-16"
                   />
                 </motion.div>
               </div>
