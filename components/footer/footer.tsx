@@ -9,6 +9,7 @@ import { SlSocialLinkedin } from "react-icons/sl";
 import { CiYoutube } from "react-icons/ci";
 
 const Footer = () => {
+  
   return (
     <footer className="bg-[#1e2755] text-orange-400">
       <div className="grid grid-cols-1 gap-8 p-6 sm:p-10 lg:grid-cols-6 lg:gap-10 lg:p-16">

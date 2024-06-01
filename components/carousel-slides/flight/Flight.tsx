@@ -13,11 +13,11 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Loader2 } from "lucide-react";
 
-
 const Flight: React.FC = () => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
 
   const handleReadMoreClick = () => {
     setIsLoading(true);
@@ -30,6 +30,7 @@ const Flight: React.FC = () => {
     setFrom(to);
     setTo(temp);
   };
+
 
   return (
     <div className="flex flex-col justify-center items-start w-full lg:w-[1055px] p-4 lg:p-10 space-y-4 lg:space-y-0">
@@ -114,7 +115,7 @@ const Flight: React.FC = () => {
                     className="rounded-full justify-center bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
                   >
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Searching
+                    Please Wait
                   </Button>
                 ) : (
                   <Button
