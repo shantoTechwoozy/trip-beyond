@@ -3,6 +3,7 @@
 import * as React from "react";
 import { addDays, format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -18,18 +19,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 
-export function ReturnDatePresets() {
+
+export function DepartureDatePresets() {
   const [date, setDate] = React.useState<Date>();
 
   return (
     <Popover>
- 
+      <Label htmlFor="departure" className="text-orange-400 font-bold">
+        Departure
+      </Label>
       <PopoverTrigger asChild>
         <Button
           variant={"outline"}
           className={cn(
-            "w-[150px] justify-start text-left font-normal ml-12 lg:ml-0",
+            "w-[150px] justify-start text-left font-normal ml-6 lg:ml-0",
             !date && "text-muted-foreground"
           )}
         >
@@ -37,7 +42,7 @@ export function ReturnDatePresets() {
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
+      <PopoverContent className="flex w-auto flex-col space-y-3 p-2">
         <Select
           onValueChange={(value) =>
             setDate(addDays(new Date(), parseInt(value)))
