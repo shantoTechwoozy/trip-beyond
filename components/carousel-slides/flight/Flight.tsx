@@ -164,18 +164,9 @@ const Flight: React.FC = () => {
               </div>
               <div className="hidden lg:block border-l border-gray-200 h-16 mx-4"></div>
               <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-8">
-                <Label
-                  htmlFor="departure"
-                  className="text-orange-400 font-bold"
-                >
-                  Depart
-                </Label>
                 <DepartureDatePresets />
               </div>
               <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-4">
-                <Label htmlFor="return" className="text-orange-400 font-bold">
-                  Return
-                </Label>
                 <ReturnDatePresets />
               </div>
               <div className="flex justify-center w-full lg:w-auto lg:ml-4 mt-4 lg:mt-5">
@@ -236,18 +227,9 @@ const Flight: React.FC = () => {
               </div>
               <div className="hidden lg:block border-l border-gray-200 h-16 mx-4"></div>
               <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-8">
-                <Label
-                  htmlFor="departure"
-                  className="text-orange-400 font-bold"
-                >
-                  Depart
-                </Label>
                 <DepartureDatePresets />
               </div>
               <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-4">
-                <Label htmlFor="return" className="text-orange-400 font-bold">
-                  Return
-                </Label>
                 <ReturnDatePresets />
               </div>
               <div className="flex justify-center w-full lg:w-auto lg:ml-4 mt-4 lg:mt-5">
