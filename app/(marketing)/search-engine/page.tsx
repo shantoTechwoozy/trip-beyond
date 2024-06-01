@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import Flight from "@/components/carousel-slides/flight/flight";
-import Hotel from "@/components/carousel-slides/hotel/hotel";
-import Package from "@/components/carousel-slides/package/package";
-import SpecialDeals from "@/components/carousel-slides/special-deals/special-deals";
-import Transportation from "@/components/carousel-slides/transportation/transportation";
+import Flight from "@/components/carousel-slides/flight";
+import Hotel from "@/components/carousel-slides/hotel";
+import Package from "@/components/carousel-slides/package";
+import SpecialDeals from "@/components/carousel-slides/special-deals";
+import Transportation from "@/components/carousel-slides/transportation";
 import { MdFlight } from "react-icons/md";
 import { RiHotelLine } from "react-icons/ri";
 import { TbPackages } from "react-icons/tb";
