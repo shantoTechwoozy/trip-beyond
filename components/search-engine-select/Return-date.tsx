@@ -18,16 +18,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
 
 export function ReturnDatePresets() {
   const [date, setDate] = React.useState<Date>();
 
   return (
     <Popover>
-      <Label htmlFor="departure" className="text-orange-400 font-bold">
-        Return
-      </Label>
+ 
       <PopoverTrigger asChild>
         <Button
           variant={"outline"}

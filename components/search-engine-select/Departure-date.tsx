@@ -19,7 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
+
 
 
 export function DepartureDatePresets() {
@@ -27,9 +27,7 @@ export function DepartureDatePresets() {
 
   return (
     <Popover>
-      <Label htmlFor="departure" className="text-orange-400 font-bold">
-        Departure
-      </Label>
+   
       <PopoverTrigger asChild>
         <Button
           variant={"outline"}
