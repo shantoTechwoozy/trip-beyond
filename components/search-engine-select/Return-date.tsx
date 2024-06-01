@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
-export default function ReturnDatePresets() {
+export function ReturnDatePresets() {
   const [date, setDate] = React.useState<Date>();
 
   return (

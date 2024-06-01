@@ -8,7 +8,7 @@ import { SelectAge } from "@/components/search-engine-select/select-age";
 import { SelectEconomy } from "@/components/search-engine-select/select-economy";
 import { MdSwapHorizontalCircle } from "react-icons/md";
 import {DepartureDatePresets} from "@/components/search-engine-select/departure-date";
-import ReturnDatePresets from "../search-engine-select/return-date";
+import { ReturnDatePresets } from "@/components/search-engine-select/return-date";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Loader2 } from "lucide-react";
