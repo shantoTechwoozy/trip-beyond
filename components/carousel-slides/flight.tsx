@@ -89,7 +89,7 @@ const Flight: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-12 mt-5 lg:mt-0">
+              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-20 mt-5 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -152,7 +152,7 @@ const Flight: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-12 mt-5 lg:mt-0">
+              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-20 mt-5 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -215,7 +215,7 @@ const Flight: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-12 mt-5 lg:mt-0">
+              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-20 mt-5 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
