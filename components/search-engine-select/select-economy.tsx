@@ -12,7 +12,7 @@ import {
 export function SelectEconomy() {
   return (
     <Select>
-      <SelectTrigger className="w-full lg:w-auto border-2 border-gray-300 hover:border-orange-400 rounded-md p-2 bg-slate-100 md:bg-transparent md:border-0 lg:border-0">
+      <SelectTrigger className="w-full lg:w-auto border-2 border-gray-300 hover:border-gray-400 rounded-md p-2 bg-slate-100 md:bg-transparent md:border-0 lg:border-0">
         <SelectValue placeholder="Economy" />
       </SelectTrigger>
       <SelectContent>

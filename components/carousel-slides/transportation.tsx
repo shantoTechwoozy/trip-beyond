@@ -31,10 +31,10 @@ const Transportation: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-start w-full lg:w-[1055px] p-4 lg:p-10 space-y-4 lg:space-y-0">
+    <div className="flex flex-col justify-center items-start w-full md:w-[850px] lg:w-[1055px] p-4 md:p-2 lg:p-10 space-y-4 md:space-y-2 lg:space-y-0">
       <Tabs defaultValue="oneWay" className="w-full lg:flex-grow">
-        <div className="flex flex-wrap justify-start items-center w-full">
-          <TabsList className="flex w-full lg:w-[350px] space-x-1">
+        <div className="flex flex-wrap justify-start items-center w-full lg:w-full md:w-[800px]">
+          <TabsList className="flex w-full md:w-[300px] lg:w-[350px] space-x-1">
             <TabsTrigger
               value="oneWay"
               className="flex-grow text-center px-1 py-2 text-black font-bold"
@@ -54,20 +54,20 @@ const Transportation: React.FC = () => {
               Multi-City
             </TabsTrigger>
           </TabsList>
-          <div className="flex flex-col lg:flex-row justify-center lg:justify-start lg:space-x-4 space-y-4 lg:space-y-0 w-full lg:w-auto mt-5 lg:mt-0 ml-0 lg:ml-8">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start md:space-x-2 lg:space-x-4 space-y-4 md:space-y-0 w-full md:w-auto mt-5 md:mt-0 ml-0 md:ml-4 lg:ml-8">
             <SelectAge />
             <SelectEconomy />
           </div>
 
-          <div className="flex items-center space-x-2 ml-0 lg:ml-56 mt-5 lg:mt-0">
+          <div className="flex items-center space-x-2 ml-0 md:ml-10 lg:ml-60 mt-5 md:mt-0">
             <Switch id="direct flights only" />
             <Label htmlFor="direct flights only">Direct Flights only</Label>
           </div>
         </div>
         <TabsContent value="oneWay">
           <Card className="border-none">
-            <CardContent className="w-full p-1 flex flex-wrap lg:flex-nowrap items-center">
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0">
+            <CardContent className="w-full lg:w-full md:w-[700px] p-1 flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center">
+              <div className="w-full md:w-[150px] lg:w-[180px] mb-4 md:mb-0 lg:mb-0">
                 <Label htmlFor="from" className="text-orange-400 font-bold">
                   From
                 </Label>
@@ -76,10 +76,10 @@ const Transportation: React.FC = () => {
                   value={from}
                   onChange={(e) => setFrom(e.target.value)}
                   placeholder="Type city name"
-                  className="border-none p-0 focus-visible:ring-transparent"
+                  className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="self-center lg:self-auto lg:ml-4">
+              <div className="self-center md:self-auto lg:self-auto md:ml-4 lg:ml-4">
                 <MdSwapHorizontalCircle
                   size={24}
                   onClick={handleSwap}
@@ -87,7 +87,7 @@ const Transportation: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-20 mt-5 lg:mt-0">
+              <div className="w-full md:w-[150px] lg:w-[180px] mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-20 mt-5 md:mt-0 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -96,28 +96,28 @@ const Transportation: React.FC = () => {
                   value={to}
                   onChange={(e) => setTo(e.target.value)}
                   placeholder="Type city name"
-                  className="border-none p-0 focus-visible:ring-transparent"
+                  className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="hidden lg:block border-l border-gray-200 h-16 mx-4"></div>
-              <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-8">
+              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4"></div>
+              <div className="w-full md:w-1/4 lg:w-1/5 mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-8">
                 <DepartureDatePresets />
               </div>
-              <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-4">
+              <div className="w-full md:w-1/5 lg:w-1/5 mb-4 md:mb-0 lg:mb-0 md:ml-0 lg:ml-4">
                 <ReturnDatePresets />
               </div>
-              <div className="flex justify-center w-full lg:w-auto lg:ml-4 mt-4 lg:mt-5">
+              <div className="flex justify-center w-full md:w-auto lg:w-auto md:ml-2 lg:ml-4 mt-4 md:mt-5 lg:mt-5">
                 {isLoading ? (
                   <Button
                     disabled
-                    className="rounded-full justify-center bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                    className="rounded-full justify-center bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-3 lg:py-4"
                   >
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Searching
+                    Please Wait
                   </Button>
                 ) : (
                   <Button
-                    className="w-full lg:w-32 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                    className="w-full md:w-28 lg:w-32 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-3 lg:py-4"
                     onClick={handleReadMoreClick}
                   >
                     Search
@@ -129,8 +129,8 @@ const Transportation: React.FC = () => {
         </TabsContent>
         <TabsContent value="roundTrip">
           <Card className="border-none">
-            <CardContent className="w-full p-1 flex flex-wrap lg:flex-nowrap items-center">
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0">
+            <CardContent className="w-full lg:w-full md:w-[700px] p-1 flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center">
+              <div className="w-full md:w-[150px] lg:w-[180px] mb-4 md:mb-0 lg:mb-0">
                 <Label htmlFor="from" className="text-orange-400 font-bold">
                   From
                 </Label>
@@ -139,10 +139,10 @@ const Transportation: React.FC = () => {
                   value={from}
                   onChange={(e) => setFrom(e.target.value)}
                   placeholder="Type city name"
-                  className="border-none p-0 focus-visible:ring-transparent"
+                  className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="self-center lg:self-auto lg:ml-4">
+              <div className="self-center md:self-auto lg:self-auto md:ml-4 lg:ml-4">
                 <MdSwapHorizontalCircle
                   size={24}
                   onClick={handleSwap}
@@ -150,7 +150,7 @@ const Transportation: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-20 mt-5 lg:mt-0">
+              <div className="w-full md:w-[150px] lg:w-[180px] mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-20 mt-5 md:mt-0 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -159,28 +159,28 @@ const Transportation: React.FC = () => {
                   value={to}
                   onChange={(e) => setTo(e.target.value)}
                   placeholder="Type city name"
-                  className="border-none p-0 focus-visible:ring-transparent"
+                  className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="hidden lg:block border-l border-gray-200 h-16 mx-4"></div>
-              <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-8">
+              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4"></div>
+              <div className="w-full md:w-1/4 lg:w-1/5 mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-8">
                 <DepartureDatePresets />
               </div>
-              <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-4">
+              <div className="w-full md:w-1/5 lg:w-1/5 mb-4 md:mb-0 lg:mb-0 md:ml-0 lg:ml-4">
                 <ReturnDatePresets />
               </div>
-              <div className="flex justify-center w-full lg:w-auto lg:ml-4 mt-4 lg:mt-5">
+              <div className="flex justify-center w-full md:w-auto lg:w-auto md:ml-2 lg:ml-4 mt-4 md:mt-5 lg:mt-5">
                 {isLoading ? (
                   <Button
                     disabled
-                    className="rounded-full justify-center bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                    className="rounded-full justify-center bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-3 lg:py-4"
                   >
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Searching
+                    Please Wait
                   </Button>
                 ) : (
                   <Button
-                    className="w-full lg:w-32 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                    className="w-full md:w-28 lg:w-32 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-3 lg:py-4"
                     onClick={handleReadMoreClick}
                   >
                     Search
@@ -192,8 +192,8 @@ const Transportation: React.FC = () => {
         </TabsContent>
         <TabsContent value="multiCity">
           <Card className="border-none">
-            <CardContent className="w-full p-1 flex flex-wrap lg:flex-nowrap items-center">
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0">
+            <CardContent className="w-full lg:w-full md:w-[700px] p-1 flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center">
+              <div className="w-full md:w-[150px] lg:w-[180px] mb-4 md:mb-0 lg:mb-0">
                 <Label htmlFor="from" className="text-orange-400 font-bold">
                   From
                 </Label>
@@ -202,10 +202,10 @@ const Transportation: React.FC = () => {
                   value={from}
                   onChange={(e) => setFrom(e.target.value)}
                   placeholder="Type city name"
-                  className="border-none p-0 focus-visible:ring-transparent"
+                  className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="self-center lg:self-auto lg:ml-4">
+              <div className="self-center md:self-auto lg:self-auto md:ml-4 lg:ml-4">
                 <MdSwapHorizontalCircle
                   size={24}
                   onClick={handleSwap}
@@ -213,7 +213,7 @@ const Transportation: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full lg:w-[180px] mb-4 lg:mb-0 lg:ml-20 mt-5 lg:mt-0">
+              <div className="w-full md:w-[150px] lg:w-[180px] mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-20 mt-5 md:mt-0 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -222,28 +222,28 @@ const Transportation: React.FC = () => {
                   value={to}
                   onChange={(e) => setTo(e.target.value)}
                   placeholder="Type city name"
-                  className="border-none p-0 focus-visible:ring-transparent"
+                  className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="hidden lg:block border-l border-gray-200 h-16 mx-4"></div>
-              <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-8">
+              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4"></div>
+              <div className="w-full md:w-1/4 lg:w-1/5 mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-8">
                 <DepartureDatePresets />
               </div>
-              <div className="w-full lg:w-1/5 mb-4 lg:mb-0 lg:ml-4">
+              <div className="w-full md:w-1/5 lg:w-1/5 mb-4 md:mb-0 lg:mb-0 md:ml-0 lg:ml-4">
                 <ReturnDatePresets />
               </div>
-              <div className="flex justify-center w-full lg:w-auto lg:ml-4 mt-4 lg:mt-5">
+              <div className="flex justify-center w-full md:w-auto lg:w-auto md:ml-2 lg:ml-4 mt-4 md:mt-5 lg:mt-5">
                 {isLoading ? (
                   <Button
                     disabled
-                    className="rounded-full justify-center bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                    className="rounded-full justify-center bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-3 lg:py-4"
                   >
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Searching
+                    Please Wait
                   </Button>
                 ) : (
                   <Button
-                    className="w-full lg:w-32 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
+                    className="w-full md:w-28 lg:w-32 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-3 lg:py-4"
                     onClick={handleReadMoreClick}
                   >
                     Search

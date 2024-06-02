@@ -36,7 +36,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="relative h-[900px] md:h-[900px] lg:h-[450px] bg-[url('/menubar/banner.jpg')] bg-no-repeat bg-cover bg-center">
+    <header className="relative h-[900px] md:h-[400px] lg:h-[450px] bg-[url('/menubar/banner.jpg')] bg-no-repeat bg-cover bg-center">
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
         <div className="flex h-24 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">

@@ -41,7 +41,7 @@ export function SelectAge() {
     <Select>
       <SelectTrigger
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full lg:w-auto border-2 border-gray-300 hover:border-orange-400 rounded-md p-2 bg-slate-100 md:bg-transparent md:border-0 lg:border-0"
+        className="w-full lg:w-auto border-2 border-gray-300 hover:border-gray-300 rounded-md p-2 bg-slate-100 md:bg-transparent md:border-0 lg:border-0"
       >
         <SelectValue placeholder="Age" />
         <span className="ml-2">{totalCount}</span>

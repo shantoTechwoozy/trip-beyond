@@ -32,7 +32,7 @@ export function ReturnDatePresets() {
         <Button
           variant={"outline"}
           className={cn(
-            "w-[150px] justify-start text-left font-normal ml-12 lg:ml-0",
+            "w-[150px] lg:w-[150px] md:w-[120px] justify-start text-left font-normal ml-6 lg:ml-0 md:ml-0",
             !date && "text-muted-foreground"
           )}
         >
@@ -40,7 +40,7 @@ export function ReturnDatePresets() {
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent side="bottom" className="flex w-auto flex-col space-y-2 p-2">
+      <PopoverContent side="bottom" align="start" className="flex w-auto flex-col space-y-2 p-2">
         <Select
           onValueChange={(value) =>
             setDate(addDays(new Date(), parseInt(value)))
