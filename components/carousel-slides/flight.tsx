@@ -24,6 +24,7 @@ const Flight: React.FC = () => {
       setIsLoading(false);
     }, 2000);
   };
+
   const handleSwap = () => {
     const temp = from;
     setFrom(to);
@@ -93,7 +94,7 @@ const Flight: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-16 mt-5 md:mt-0 lg:mt-0">
+              <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0 md:ml-8 lg:ml-8 mt-5 md:mt-0 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -105,12 +106,12 @@ const Flight: React.FC = () => {
                   className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4 mr-8"></div>
+              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4 mr-2"></div>
 
               <div className="flex flex-col md:w-1/5 lg:w-1/5 ">
                 <Label
                   htmlFor="departure"
-                  className="text-orange-400 font-bold ml-0 md:ml-5 lg:ml-0"
+                  className="text-orange-400 font-bold ml-0 md:ml-5 lg:ml-5"
                 >
                   Departure
                 </Label>
@@ -120,7 +121,7 @@ const Flight: React.FC = () => {
               <div className="flex flex-col md:w-1/5 lg:w-1/5 ">
                 <Label
                   htmlFor="return"
-                  className="text-orange-400 font-bold ml-5 md:ml-5 lg:ml-0"
+                  className="text-orange-400 font-bold ml-8 md:ml-5 lg:ml-0"
                 >
                   Return
                 </Label>
@@ -149,7 +150,7 @@ const Flight: React.FC = () => {
           </Card>
         </TabsContent>
         <TabsContent value="roundTrip">
-        <Card className="border-none">
+          <Card className="border-none">
             <CardContent className="w-full p-1 flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center">
               <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0">
                 <Label htmlFor="from" className="text-orange-400 font-bold">
@@ -171,7 +172,7 @@ const Flight: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-16 mt-5 md:mt-0 lg:mt-0">
+              <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0 md:ml-8 lg:ml-8 mt-5 md:mt-0 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -183,12 +184,12 @@ const Flight: React.FC = () => {
                   className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4 mr-8"></div>
+              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4 mr-2"></div>
 
               <div className="flex flex-col md:w-1/5 lg:w-1/5 ">
                 <Label
                   htmlFor="departure"
-                  className="text-orange-400 font-bold ml-0 md:ml-5 lg:ml-0"
+                  className="text-orange-400 font-bold ml-0 md:ml-5 lg:ml-5"
                 >
                   Departure
                 </Label>
@@ -198,7 +199,7 @@ const Flight: React.FC = () => {
               <div className="flex flex-col md:w-1/5 lg:w-1/5 ">
                 <Label
                   htmlFor="return"
-                  className="text-orange-400 font-bold ml-5 md:ml-5 lg:ml-0"
+                  className="text-orange-400 font-bold ml-8 md:ml-5 lg:ml-0"
                 >
                   Return
                 </Label>
@@ -227,7 +228,7 @@ const Flight: React.FC = () => {
           </Card>
         </TabsContent>
         <TabsContent value="multiCity">
-        <Card className="border-none">
+          <Card className="border-none">
             <CardContent className="w-full p-1 flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center">
               <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0">
                 <Label htmlFor="from" className="text-orange-400 font-bold">
@@ -249,7 +250,7 @@ const Flight: React.FC = () => {
                   aria-label="Swap From and To"
                 />
               </div>
-              <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0 md:ml-6 lg:ml-16 mt-5 md:mt-0 lg:mt-0">
+              <div className="w-full md:w-[150px] lg:w-[150px] mb-4 md:mb-0 lg:mb-0 md:ml-8 lg:ml-8 mt-5 md:mt-0 lg:mt-0">
                 <Label htmlFor="to" className="text-orange-400 font-bold">
                   To
                 </Label>
@@ -261,12 +262,12 @@ const Flight: React.FC = () => {
                   className="lg:text-lg md:text-xs border-none p-0 focus-visible:ring-transparent"
                 />
               </div>
-              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4 mr-8"></div>
+              <div className="hidden md:block lg:block border-l border-gray-200 h-16 mx-4 mr-2"></div>
 
               <div className="flex flex-col md:w-1/5 lg:w-1/5 ">
                 <Label
                   htmlFor="departure"
-                  className="text-orange-400 font-bold ml-0 md:ml-5 lg:ml-0"
+                  className="text-orange-400 font-bold ml-0 md:ml-5 lg:ml-5"
                 >
                   Departure
                 </Label>
@@ -276,7 +277,7 @@ const Flight: React.FC = () => {
               <div className="flex flex-col md:w-1/5 lg:w-1/5 ">
                 <Label
                   htmlFor="return"
-                  className="text-orange-400 font-bold ml-5 md:ml-5 lg:ml-0"
+                  className="text-orange-400 font-bold ml-8 md:ml-5 lg:ml-0"
                 >
                   Return
                 </Label>
