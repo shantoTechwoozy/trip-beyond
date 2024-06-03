@@ -9,21 +9,17 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
 
 export function DepartureDatePresets() {
   const [date, setDate] = React.useState<Date>();
 
   return (
     <Popover>
-      <Label htmlFor="departure" className="text-orange-400 font-bold">
-        Departure
-      </Label>
       <PopoverTrigger asChild>
         <Button
           variant={"outline"}
           className={cn(
-            "w-[150px] lg:w-[150px] md:w-[120px] justify-start text-left font-normal ml-6 lg:ml-0 md:ml-0",
+            "w-[150px] lg:w-[150px] md:w-[120px] justify-start text-left font-normal ml-0 lg:ml-0 md:ml-5 mt-1",
             !date && "text-muted-foreground"
           )}
         >
