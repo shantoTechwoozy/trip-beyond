@@ -24,6 +24,8 @@ const Flight: React.FC = () => {
       setIsLoading(false);
     }, 2000);
   };
+
+  
   const handleSwap = () => {
     const temp = from;
     setFrom(to);
