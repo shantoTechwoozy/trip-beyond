@@ -119,7 +119,7 @@ const Hotel: React.FC = () => {
             <div className="flex flex-col md:w-1/5 lg:w-1/5 ">
               <Label
                 htmlFor="return"
-                className="text-orange-400 font-bold ml-5 md:ml-5 lg:ml-0"
+                className="text-orange-400 font-bold ml-8 md:ml-5 lg:ml-0"
               >
                 Return
               </Label>
