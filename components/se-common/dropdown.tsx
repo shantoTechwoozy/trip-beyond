@@ -1,10 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Command,
+  CommandList,
+  CommandItem,
+  CommandEmpty,
+  CommandGroup,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface DropdownProps {
   options: { value: string; displayValue: string }[];
@@ -17,74 +26,81 @@ const Dropdown: React.FC<DropdownProps> = ({
   selectedOption,
   setSelectedOption,
 }) => {
-  const [search, setSearch] = useState("");
-  const [filteredOptions, setFilteredOptions] = useState(options);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [open, setOpen] = React.useState(false);
+  const [search, setSearch] = React.useState("");
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    setFilteredOptions(
-      options.filter((option) =>
-        option.displayValue.toLowerCase().includes(search.toLowerCase())
-      )
-    );
-    setIsDropdownOpen(search.length > 0);
-  }, [search, options]);
+  const filteredOptions = options.filter(
+    (option) =>
+      option.displayValue.toLowerCase().includes(search.toLowerCase()) ||
+      option.value.toLowerCase().includes(search.toLowerCase())
+  );
 
-  const handleOptionClick = (option: {
-    value: string;
-    displayValue: string;
-  }) => {
-    setSelectedOption(option);
-    setSearch(""); // Reset search input after selection
-    setIsDropdownOpen(false);
-  };
-
-  const handleClear = () => {
-    setSearch("");
-    setSelectedOption({ value: "", displayValue: "" }); // Clear selected option
-    if (inputRef.current) {
+  React.useEffect(() => {
+    if (open && inputRef.current) {
       inputRef.current.focus();
     }
+  }, [open]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
   };
 
   return (
-    <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
-      <DropdownMenuTrigger asChild>
-        <div className="relative w-full">
-          <input
-            ref={inputRef}
-            type="text"
-            value={search || selectedOption.displayValue}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full mt-4 text-left border-none focus-visible:ring-transparent"
-            placeholder="Search or select"
-          />
-          {search && (
-            <button
-              className="absolute right-2 top-2 text-gray-500 cursor-pointer text-xl"
-              onClick={handleClear}
-            >
-              &times;
-            </button>
-          )}
-        </div>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="z-50 w-full bg-white border border-gray-300 rounded mt-1 max-h-60 overflow-auto">
-        {filteredOptions.length > 0 ? (
-          filteredOptions.map((option, index) => (
-            <DropdownMenuItem
-              key={index}
-              onSelect={() => handleOptionClick(option)}
-            >
-              {option.displayValue}
-            </DropdownMenuItem>
-          ))
-        ) : (
-          <DropdownMenuItem disabled>No options found</DropdownMenuItem>
-        )}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-full justify-between text-left border border-gray-300 px-0 py-2 rounded-md focus:outline-none border-none"
+        >
+          {selectedOption.displayValue || "Search or select"}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-full p-0">
+        <Command>
+          <div className="p-2">
+            <input
+              ref={inputRef}
+              placeholder="Search..."
+              value={search}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            />
+          </div>
+          <CommandList style={{ maxHeight: "200px", overflowY: "auto" }}>
+            {filteredOptions.length === 0 ? (
+              <CommandEmpty>No options found.</CommandEmpty>
+            ) : (
+              <CommandGroup>
+                {filteredOptions.map((option) => (
+                  <CommandItem
+                    key={option.value}
+                    value={option.value}
+                    onSelect={() => {
+                      setSelectedOption(option);
+                      setSearch("");
+                      setOpen(false);
+                    }}
+                  >
+                    <Check
+                      className={cn(
+                        "mr-2 h-4 w-4",
+                        selectedOption.value === option.value
+                          ? "opacity-100"
+                          : "opacity-0"
+                      )}
+                    />
+                    {option.displayValue}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
   );
 };
 
