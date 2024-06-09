@@ -1,28 +1,20 @@
-import React, { useState } from "react";
-import { Country, State } from "country-state-city";
-import Dropdown from "@/components/se-common/dropdown";
+import React, { useState } from 'react';
+import { Country, State } from 'country-state-city';
+import Dropdown from '@/components/se-common/dropdown';
 
 const CountryAndStateComponent: React.FC = () => {
-  const [selectedCountry, setSelectedCountry] = useState({
-    value: "",
-    displayValue: "",
-  });
-  const [selectedState, setSelectedState] = useState({
-    value: "",
-    displayValue: "",
-  });
+  const [selectedCountry, setSelectedCountry] = useState({ value: '', displayValue: '' });
+  const [selectedState, setSelectedState] = useState({ value: '', displayValue: '' });
 
-  const countryData = Country.getAllCountries().map((country) => ({
+  const countryData = Country.getAllCountries().map(country => ({
     value: country.isoCode,
-    displayValue: `${country.name} (${country.isoCode})`,
+    displayValue: `${country.name} (${country.isoCode})`
   }));
 
-  const stateData = selectedCountry.value
-    ? State.getStatesOfCountry(selectedCountry.value).map((state) => ({
-        value: state.isoCode,
-        displayValue: `${state.name} (${state.isoCode})`,
-      }))
-    : [];
+  const stateData = selectedCountry.value ? State.getStatesOfCountry(selectedCountry.value).map(state => ({
+    value: state.isoCode,
+    displayValue: `${state.name} (${state.isoCode})`
+  })) : [];
 
   return (
     <div>
@@ -35,9 +27,7 @@ const CountryAndStateComponent: React.FC = () => {
         />
       </div>
       <div>
-        <p>
-          All States of - {selectedCountry.displayValue || "Select a country"}
-        </p>
+        <p>All States of - {selectedCountry.displayValue || 'Select a country'}</p>
         <Dropdown
           options={stateData}
           selectedOption={selectedState}
