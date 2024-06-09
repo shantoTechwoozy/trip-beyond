@@ -21,12 +21,33 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import SearchEngine from "../search-engine/page";
+import { LoginForm } from "../registration/login";
+import { SignupForm } from "../registration/signup";
 
 const Header: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
-
+  const [isLoginDialogOpen, setLoginDialogOpen] = useState(false);
+  const [isSignupDialogOpen, setSignupDialogOpen] = useState(false);
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -74,7 +95,46 @@ const Header: React.FC = () => {
                   </DrawerHeader>
                   <div className="p-4 pb-0">
                     <div className="space-y-4">
-                      {isClient && <div>Registration</div>}
+                    <DropdownMenu>
+              <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">Registration</DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLoginDialogOpen(true)}>
+                  Login
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSignupDialogOpen(true)}>
+                  Signup
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Dialog open={isLoginDialogOpen} onOpenChange={setLoginDialogOpen}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Signup</DialogTitle>
+                  <DialogDescription>
+                    Enter your details to signup.
+                  </DialogDescription>
+                </DialogHeader>
+                <LoginForm />
+              </DialogContent>
+            </Dialog>
+            <Dialog
+              open={isSignupDialogOpen}
+              onOpenChange={setSignupDialogOpen}
+            >
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Signup</DialogTitle>
+                  <DialogDescription>
+                    Enter your details to signup.
+                  </DialogDescription>
+                </DialogHeader>
+                <SignupForm />
+              </DialogContent>
+            </Dialog>
                       <div>
                         <Button
                           className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
@@ -119,7 +179,46 @@ const Header: React.FC = () => {
                 </SelectContent>
               </Select>
             </div>
-            {isClient && <div>Registration</div>}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">Registration</DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLoginDialogOpen(true)}>
+                  Login
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSignupDialogOpen(true)}>
+                  Signup
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Dialog open={isLoginDialogOpen} onOpenChange={setLoginDialogOpen}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Signup</DialogTitle>
+                  <DialogDescription>
+                    Enter your details to signup.
+                  </DialogDescription>
+                </DialogHeader>
+                <LoginForm />
+              </DialogContent>
+            </Dialog>
+            <Dialog
+              open={isSignupDialogOpen}
+              onOpenChange={setSignupDialogOpen}
+            >
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Signup</DialogTitle>
+                  <DialogDescription>
+                    Enter your details to signup.
+                  </DialogDescription>
+                </DialogHeader>
+                <SignupForm />
+              </DialogContent>
+            </Dialog>
             <div>
               <Button className="h-9 font-bold" variant="custom">
                 Agent Login
