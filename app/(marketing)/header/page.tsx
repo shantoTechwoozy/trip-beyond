@@ -9,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Loader } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaPhone } from "react-icons/fa6";
 import { TiThMenuOutline } from "react-icons/ti";

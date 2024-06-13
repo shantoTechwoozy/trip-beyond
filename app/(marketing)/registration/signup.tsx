@@ -15,14 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogFooter,
-} from "@/components/ui/dialog";
+import { DialogFooter } from "@/components/ui/dialog";
 
 const formSchema = z
   .object({
@@ -67,8 +60,11 @@ export function SignupForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <div className="flex gap-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 p-4 sm:p-6 md:p-8 lg:p-0"
+      >
+        <div className="flex flex-col md:flex-row gap-4">
           <FormField
             control={form.control}
             name="firstName"
@@ -143,15 +139,30 @@ export function SignupForm() {
             </FormItem>
           )}
         />
+        <div className="text-right">
+          <button
+            type="button"
+            className="text-sm text-blue-500 hover:underline"
+            onClick={() => alert("Forgot Password Clicked")}
+          >
+            Forgot Password?
+          </button>
+        </div>
         <DialogFooter className="flex flex-col space-y-2">
-          <Button type="submit" className="w-full">
-            Sign Up
+          <Button type="submit" className="w-full bg-orange-400 font-bold">
+            Log in
           </Button>
-          <Button variant="outline" className="w-full">
-            Sign Up with Google
+          <Button
+            variant="outline"
+            className="w-full bg-blue-400 text-white font-bold"
+          >
+            Log in with Facebook
           </Button>
-          <Button variant="outline" className="w-full">
-            Sign Up with Facebook
+          <Button
+            variant="outline"
+            className="w-full bg-red-400 text-white font-bold"
+          >
+            Log in with Google
           </Button>
         </DialogFooter>
       </form>
