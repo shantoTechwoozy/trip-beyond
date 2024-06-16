@@ -1,8 +1,10 @@
 // src/user/dto/create-user.dto.ts
 
 export class CreateUserDto {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public email: string,
+    public password: string,
+  ) {}
 }
