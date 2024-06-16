@@ -16,7 +16,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const port = configService.get<number>('PORT') || 3001; // Adjust PORT as needed
 
-  // Define your CORS options here
+  // Define your CORS options
   const corsOptions: CorsOptions = {
     origin: true, // This should be set to the domains you want to allow
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify which methods are allowed
