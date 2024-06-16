@@ -94,46 +94,55 @@ const Header: React.FC = () => {
                   </DrawerHeader>
                   <div className="p-4 pb-0">
                     <div className="space-y-4">
-                    <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">Registration</DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLoginDialogOpen(true)}>
-                  Login
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setSignupDialogOpen(true)}>
-                  Signup
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Dialog open={isLoginDialogOpen} onOpenChange={setLoginDialogOpen}>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Signup</DialogTitle>
-                  <DialogDescription>
-                    Enter your details to signup.
-                  </DialogDescription>
-                </DialogHeader>
-                <LoginForm />
-              </DialogContent>
-            </Dialog>
-            <Dialog
-              open={isSignupDialogOpen}
-              onOpenChange={setSignupDialogOpen}
-            >
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Signup</DialogTitle>
-                  <DialogDescription>
-                    Enter your details to signup.
-                  </DialogDescription>
-                </DialogHeader>
-                <SignupForm />
-              </DialogContent>
-            </Dialog>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">
+                          Registration
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem>Profile</DropdownMenuItem>
+                          <DropdownMenuItem>Billing</DropdownMenuItem>
+                          <DropdownMenuItem
+                            onClick={() => setLoginDialogOpen(true)}
+                          >
+                            Login
+                          </DropdownMenuItem>
+                          <DropdownMenuItem
+                            onClick={() => setSignupDialogOpen(true)}
+                          >
+                            Signup
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                      <Dialog
+                        open={isLoginDialogOpen}
+                        onOpenChange={setLoginDialogOpen}
+                      >
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Signup</DialogTitle>
+                            <DialogDescription>
+                              Enter your details to signup.
+                            </DialogDescription>
+                          </DialogHeader>
+                          <LoginForm />
+                        </DialogContent>
+                      </Dialog>
+                      <Dialog
+                        open={isSignupDialogOpen}
+                        onOpenChange={setSignupDialogOpen}
+                      >
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Signup</DialogTitle>
+                            <DialogDescription>
+                              Enter your details to signup.
+                            </DialogDescription>
+                          </DialogHeader>
+                          <SignupForm />
+                        </DialogContent>
+                      </Dialog>
                       <div>
                         <Button
                           className="rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-4"
@@ -179,7 +188,9 @@ const Header: React.FC = () => {
               </Select>
             </div>
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">Registration</DropdownMenuTrigger>
+              <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">
+                Registration
+              </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
@@ -196,9 +207,9 @@ const Header: React.FC = () => {
             <Dialog open={isLoginDialogOpen} onOpenChange={setLoginDialogOpen}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Signup</DialogTitle>
+                  <DialogTitle>Login</DialogTitle>
                   <DialogDescription>
-                    Enter your details to signup.
+                    Enter your details to login.
                   </DialogDescription>
                 </DialogHeader>
                 <LoginForm />

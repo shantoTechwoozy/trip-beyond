@@ -4,7 +4,7 @@ import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
-
+import axios from "axios";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -54,17 +54,20 @@ export function SignupForm() {
     },
   });
 
-  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
+    try {
+      const response = await axios.post('http://localhost:3001/auth/signup', data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Signup error', error);
+    }
   };
+  
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 p-4 sm:p-6 md:p-8 lg:p-0"
-      >
-        <div className="flex flex-col md:flex-row gap-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <div className="flex gap-4">
           <FormField
             control={form.control}
             name="firstName"
@@ -72,7 +75,7 @@ export function SignupForm() {
               <FormItem className="flex-1">
                 <FormLabel>First Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your first name" {...field} />
+                  <Input placeholder="Enter your first name" {...form.register('firstName', { required: true })} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -85,7 +88,7 @@ export function SignupForm() {
               <FormItem className="flex-1">
                 <FormLabel>Last Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your last name" {...field} />
+                  <Input placeholder="Enter your last name" {...form.register('lastName', { required: true })} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -99,7 +102,7 @@ export function SignupForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="Enter your email" {...field} />
+                <Input type="email" placeholder="Enter your email" {...form.register('email', { required: true })} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -115,7 +118,7 @@ export function SignupForm() {
                 <Input
                   type="password"
                   placeholder="Enter your password"
-                  {...field}
+                  {...form.register('password', { required: true })}
                 />
               </FormControl>
               <FormMessage />
@@ -132,7 +135,11 @@ export function SignupForm() {
                 <Input
                   type="password"
                   placeholder="Retype your password"
-                  {...field}
+                  {...form.register('retypePassword', { 
+                    required: true, 
+                    validate: (value) => value === form.getValues().password,
+                  
+                  })}
                 />
               </FormControl>
               <FormMessage />
@@ -150,19 +157,19 @@ export function SignupForm() {
         </div>
         <DialogFooter className="flex flex-col space-y-2">
           <Button type="submit" className="w-full bg-orange-400 font-bold">
-            Log in
+            Sign Up
           </Button>
           <Button
             variant="outline"
             className="w-full bg-blue-400 text-white font-bold"
           >
-            Log in with Facebook
+             Sign Up with Facebook
           </Button>
           <Button
             variant="outline"
             className="w-full bg-red-400 text-white font-bold"
           >
-            Log in with Google
+           Sign Up with Google
           </Button>
         </DialogFooter>
       </form>

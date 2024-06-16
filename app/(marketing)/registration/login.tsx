@@ -4,7 +4,7 @@ import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
-
+import axios from "axios";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -19,26 +19,9 @@ import { DialogFooter } from "@/components/ui/dialog";
 
 const formSchema = z
   .object({
-    firstName: z.string().min(2, {
-      message: "First name must be at least 2 characters.",
-    }),
-    lastName: z.string().min(2, {
-      message: "Last name must be at least 2 characters.",
-    }),
-    email: z.string().email({
-      message: "Invalid email address.",
-    }),
-    password: z.string().min(6, {
-      message: "Password must be at least 6 characters.",
-    }),
-    retypePassword: z.string().min(6, {
-      message: "Retype password must be at least 6 characters.",
-    }),
+    email: z.string().email({ message: "Invalid email address." }),
+  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
   })
-  .refine((data) => data.password === data.retypePassword, {
-    message: "Passwords do not match",
-    path: ["retypePassword"],
-  });
 
 type FormSchemaType = z.infer<typeof formSchema>;
 
@@ -46,16 +29,18 @@ export function LoginForm() {
   const form = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
       email: "",
       password: "",
-      retypePassword: "",
     },
   });
 
-  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-    console.log(data);
+  const onSubmit = async (data: FormSchemaType) => {
+    try {
+      const response = await axios.post('http://localhost:3001/auth/login', data);
+      console.log(response.data); // Handle success (e.g., store token)
+    } catch (error) {
+      console.error('Login error', error);
+    }
   };
 
   return (
