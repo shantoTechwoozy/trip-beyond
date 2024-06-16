@@ -1,20 +1,18 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "ES2018",
-    "strict": true,
     "esModuleInterop": true,
+    "target": "ES2018",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": true,
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "typeRoots": ["node_modules/@types", "src/types"],
-    "skipLibCheck": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "src/types"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
