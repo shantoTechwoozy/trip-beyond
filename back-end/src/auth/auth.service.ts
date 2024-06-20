@@ -1,8 +1,9 @@
 // src/auth/auth.service.ts
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'prisma/prisma.service';
-import { CreateUserDto } from 'src/user/create-user.dto';
+
 import { Prisma } from '@prisma/client';
+import { PrismaService } from '../../prisma/prisma.service';
+import { CreateUserDto } from '../user/create-user.dto';
 
 @Injectable()
 export class AuthService {
