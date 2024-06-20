@@ -4,7 +4,7 @@ import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
-
+import axios from "axios";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -54,8 +54,13 @@ export function SignupForm() {
     },
   });
 
-  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
+    try {
+      const response = await axios.post('http://localhost:3001/auth/signup', data); // Adjust URL to match backend route
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
