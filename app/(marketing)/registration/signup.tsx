@@ -150,19 +150,19 @@ export function SignupForm() {
         </div>
         <DialogFooter className="flex flex-col space-y-2">
           <Button type="submit" className="w-full bg-orange-400 font-bold">
-            Log in
+            Sign Up
           </Button>
           <Button
             variant="outline"
             className="w-full bg-blue-400 text-white font-bold"
           >
-            Log in with Facebook
+            Sign Up with Facebook
           </Button>
           <Button
             variant="outline"
             className="w-full bg-red-400 text-white font-bold"
           >
-            Log in with Google
+            Sign Up with Google
           </Button>
         </DialogFooter>
       </form>
