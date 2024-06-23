@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from '../prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Prisma } from '@prisma/client';
-import { PrismaService } from '../prisma/prisma.service';
+import { LoginUserDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
@@ -33,4 +34,24 @@ export class AuthService {
       throw error;
     }
   }
+
+  async login(loginUserDto: LoginUserDto) {
+    const { email, password } = loginUserDto;
+
+    const user = await this.prisma.user.findUnique({
+      where: { email },
+    });
+
+    if (!user || user.password !== password) {
+      throw new Error('Invalid credentials');
+    }
+
+    return user;
+  }
 }
+
+
+
+
+
+
