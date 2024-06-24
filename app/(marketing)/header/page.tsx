@@ -44,10 +44,21 @@ import { LoginForm } from "../registration/login";
 import { SignupForm } from "../registration/signup";
 import { DialogProvider } from "@/components/common/DialogContext";
 import { useDialog } from "@/components/common/DialogContext";
+import { useRouter } from "next/navigation";
 
 const Header: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const handleCheckoutClick = () => {
+    router.push("/checkout");
+  };
+
+  const handleLogoClick=()=>{
+    router.push("/");
+  }
+
   const {
     isLoginDialogOpen,
     setLoginDialogOpen,
@@ -76,6 +87,7 @@ const Header: React.FC = () => {
                   height={60}
                   width={180}
                   alt="logo"
+                  onClick={handleLogoClick}
                 />
               </div>
             </a>
@@ -104,13 +116,14 @@ const Header: React.FC = () => {
                     <div className="space-y-4">
                       <DropdownMenu>
                         <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">
-                          Registration
+                          My Account
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
-                          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                          <DropdownMenuSeparator />
+        
                           <DropdownMenuItem>Profile</DropdownMenuItem>
-                          <DropdownMenuItem>Billing</DropdownMenuItem>
+                          <DropdownMenuItem onClick={handleCheckoutClick}>
+                            Billing
+                          </DropdownMenuItem>
                           <DropdownMenuItem
                             onClick={() => setLoginDialogOpen(true)}
                           >
@@ -184,7 +197,7 @@ const Header: React.FC = () => {
           >
             <div className="text-gray-300 transition hover:text-gray-300/75">
               <Select>
-                <SelectTrigger className="w-[75px]">
+                <SelectTrigger className=" text-gray-200 lg:text-md md:text-sm text-sm font-bold">
                   <SelectValue placeholder="USD" />
                 </SelectTrigger>
                 <SelectContent>
@@ -196,14 +209,12 @@ const Header: React.FC = () => {
               </Select>
             </div>
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-300 lg:text-md md:text-sm text-sm font-bold">
-                Registration
+              <DropdownMenuTrigger className="text-gray-200 lg:text-md md:text-sm text-sm font-bold">
+                 My Account
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
                 <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
+                <DropdownMenuItem onClick={handleCheckoutClick}>Billing</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setLoginDialogOpen(true)}>
                   Login
                 </DropdownMenuItem>
@@ -215,9 +226,9 @@ const Header: React.FC = () => {
             <Dialog open={isLoginDialogOpen} onOpenChange={setLoginDialogOpen}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Signup</DialogTitle>
+                  <DialogTitle>Login</DialogTitle>
                   <DialogDescription>
-                    Enter your details to signup.
+                    Enter your details to login.
                   </DialogDescription>
                 </DialogHeader>
                 <LoginForm />

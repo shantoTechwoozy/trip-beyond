@@ -54,6 +54,7 @@ export function LoginForm() {
     try {
       const response = await axios.post("http://localhost:3001/auth/login", data);
       toast.success("Login successful!");
+      console.log("Login successful", data);
 
       setTimeout(() => {
         if (isMounted) {

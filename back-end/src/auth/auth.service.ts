@@ -10,7 +10,6 @@ export class AuthService {
 
   async signup(createUserDto: CreateUserDto) {
     const { firstName, lastName, email, password } = createUserDto;
-
     try {
       const user = await this.prisma.user.create({
         data: {
@@ -20,24 +19,20 @@ export class AuthService {
           password,
         },
       });
-
       return user;
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
-        if (
-          error.code === 'P2002' &&
-          (error.meta?.target as string[])?.includes('email')
-        ) {
+        if (error.code === 'P2002' && (error.meta?.target as string[])?.includes('email')) {
           throw new Error('A user with this email already exists.');
         }
       }
-      throw error;
+      console.error('Signup error:', error); // Log the error for debugging
+      throw new Error('Internal server error');
     }
   }
 
   async login(loginUserDto: LoginUserDto) {
     const { email, password } = loginUserDto;
-
     const user = await this.prisma.user.findUnique({
       where: { email },
     });
@@ -45,13 +40,6 @@ export class AuthService {
     if (!user || user.password !== password) {
       throw new Error('Invalid credentials');
     }
-
     return user;
   }
 }
-
-
-
-
-
-
