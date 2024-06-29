@@ -4,7 +4,6 @@ import DealsCard from "./deals/page";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import Exclusives from "./exclusives/page";
-import { FaV } from "react-icons/fa6";
 import FavoriteDesCard from "./favorite-destination/page";
 import DownloadApp from "./download-app/page";
 

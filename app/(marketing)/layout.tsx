@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import Header from "./header/page";
 import "../globals.css";
 import Footer from "@/components/footer/footer";
@@ -18,7 +17,6 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <ClerkProvider>
       <html lang="en">
         <body className={font.className}>
           <div className="min-h-screen flex flex-col">
@@ -30,7 +28,6 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           </div>
         </body>
       </html>
-    </ClerkProvider>
   );
 };
 

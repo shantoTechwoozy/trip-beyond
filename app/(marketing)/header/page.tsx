@@ -2,14 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import {
-  ClerkLoaded,
-  ClerkLoading,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/nextjs";
-import {
   Select,
   SelectContent,
   SelectGroup,
@@ -84,21 +76,7 @@ const Header: React.FC = () => {
                     <div className="space-y-4">
                       {isClient && (
                         <div>
-                          <ClerkLoading>
-                            <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-                          </ClerkLoading>
-                          <ClerkLoaded>
-                            <SignedIn>
-                              <UserButton afterSignOutUrl="/" />
-                            </SignedIn>
-                            <SignedOut>
-                              <SignInButton mode="modal">
-                                <Button size="lg" variant="custom">
-                                  Register
-                                </Button>
-                              </SignInButton>
-                            </SignedOut>
-                          </ClerkLoaded>
+                          Registration
                         </div>
                       )}
                       <div>
@@ -147,21 +125,7 @@ const Header: React.FC = () => {
             </div>
             {isClient && (
               <div>
-                <ClerkLoading>
-                  <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-                </ClerkLoading>
-                <ClerkLoaded>
-                  <SignedIn>
-                    <UserButton afterSignOutUrl="/" />
-                  </SignedIn>
-                  <SignedOut>
-                    <SignInButton mode="modal">
-                      <Button size="lg" variant="common">
-                        Login
-                      </Button>
-                    </SignInButton>
-                  </SignedOut>
-                </ClerkLoaded>
+               Registration
               </div>
             )}
             <div>
