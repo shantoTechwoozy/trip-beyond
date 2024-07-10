@@ -2,6 +2,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 import {
   Select,
   SelectContent,
@@ -25,39 +26,35 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 
-import SearchEngine from "../search-engine/page";
 import { LoginForm } from "../registration/login";
 import { SignupForm } from "../registration/signup";
 import { DialogProvider } from "@/components/common/DialogContext";
 import { useDialog } from "@/components/common/DialogContext";
-import { useRouter } from "next/navigation";
+import SearchEngine from "../carousel-slides/search-engine/page";
 
 const Header: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleCheckoutClick = () => {
     router.push("/checkout");
   };
 
-  const handleLogoClick=()=>{
+  const handleLogoClick = () => {
     router.push("/");
-  }
+  };
 
   const {
     isLoginDialogOpen,
@@ -75,7 +72,11 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="relative h-[900px] md:h-[400px] lg:h-[450px] bg-[url('/menubar/banner.jpg')] bg-no-repeat bg-cover bg-center">
+    <header
+      className={`relative ${
+        pathname === "/" ? "h-[900px] md:h-[400px] lg:h-[450px] bg-[url('/menubar/banner.jpg')] bg-no-repeat bg-cover bg-center" : "h-auto"
+      } ${pathname !== "/" ? "bg-[#1e2755]" : ""}`}
+    >
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
         <div className="flex h-24 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -119,7 +120,6 @@ const Header: React.FC = () => {
                           My Account
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
-        
                           <DropdownMenuItem>Profile</DropdownMenuItem>
                           <DropdownMenuItem onClick={handleCheckoutClick}>
                             Billing
@@ -210,11 +210,13 @@ const Header: React.FC = () => {
             </div>
             <DropdownMenu>
               <DropdownMenuTrigger className="text-gray-200 lg:text-md md:text-sm text-sm font-bold">
-                 My Account
+                My Account
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem onClick={handleCheckoutClick}>Billing</DropdownMenuItem>
+                <DropdownMenuItem onClick={handleCheckoutClick}>
+                  Billing
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setLoginDialogOpen(true)}>
                   Login
                 </DropdownMenuItem>
@@ -260,7 +262,7 @@ const Header: React.FC = () => {
             </div>
           </nav>
         </div>
-        <SearchEngine />
+        {pathname === "/" && <SearchEngine />}
       </div>
     </header>
   );

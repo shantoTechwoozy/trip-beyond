@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { State } from "country-state-city";
-import Dropdown from "@/components/se-common/dropdown";
+import Dropdown from "@/components/carousel-slides/se-common/dropdown";
 
 interface StateComponentProps {
   countryCode?: string;

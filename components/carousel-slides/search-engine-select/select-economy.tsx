@@ -17,7 +17,6 @@ export function SelectEconomy() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Economy</SelectLabel>
           <SelectItem value="1">Premium Economy</SelectItem>
           <SelectItem value="2">Business</SelectItem>
           <SelectItem value="3">First Class</SelectItem>

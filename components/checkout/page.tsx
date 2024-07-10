@@ -6,7 +6,7 @@ const Payment = () => {
     <div className="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
       <div className="flex justify-start item-start space-y-2 flex-col">
         <h1 className="text-3xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">
-          Order #13432
+          Check Out
         </h1>
         <p className="text-base dark:text-gray-300 font-medium leading-6 text-gray-600">
           21st March 2021 at 10:34 PM
@@ -16,7 +16,7 @@ const Payment = () => {
         <div className="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
           <div className="flex flex-col justify-start items-start dark:bg-gray-800 bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
             <p className="text-lg md:text-xl dark:text-white font-semibold leading-6 xl:leading-5 text-gray-800">
-              Customer’s Cart
+              Billing Info
             </p>
             <div className="mt-4 md:mt-6 flex flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full">
               <div className="pb-4 md:pb-8 w-full md:w-40">

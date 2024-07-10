@@ -6,6 +6,9 @@ import { LoginUserDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
+  validateUser(arg0: { email: string; password: string; }) {
+      throw new Error('Method not implemented.');
+  }
   constructor(private readonly prisma: PrismaService) {}
 
   async signup(createUserDto: CreateUserDto) {

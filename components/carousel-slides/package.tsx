@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SelectAge } from "@/components/search-engine-select/select-age";
-import { SelectEconomy } from "@/components/search-engine-select/select-economy";
+import { SelectAge } from "@/components/carousel-slides/search-engine-select/select-age";
+import { SelectEconomy } from "@/components/carousel-slides/search-engine-select/select-economy";
 import { Switch } from "@/components/ui/switch";
-import { Content } from "../se-common/tab-content";
+import { Content } from "./se-common/tab-content";
 
 const Package: React.FC = () => {
   const [from, setFrom] = useState({ value: "", displayValue: "" });

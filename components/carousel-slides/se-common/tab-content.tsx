@@ -1,15 +1,14 @@
-"use client";
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { MdSwapHorizontalCircle } from "react-icons/md";
-import { DepartureDatePresets } from "@/components/search-engine-select/departure-date";
-import { ReturnDatePresets } from "@/components/search-engine-select/return-date";
+import { DepartureDatePresets } from "@/components/carousel-slides/search-engine-select/departure-date";
+import { ReturnDatePresets } from "@/components/carousel-slides/search-engine-select/return-date";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import Dropdown from "@/components/se-common/dropdown";
+import Dropdown from "@/components/carousel-slides/se-common/dropdown";
 import { Country, State } from "country-state-city";
-
+import { useRouter } from "next/navigation";
 interface Props {
   from: { value: string; displayValue: string };
   to: { value: string; displayValue: string };
@@ -29,6 +28,13 @@ export const Content: React.FC<Props> = ({
   handleReadMoreClick,
   handleSwap,
 }) => {
+
+  const router=useRouter()
+
+  const handleSearchClick = () =>{
+    router.push("/contact")
+  }
+
   const countryData = Country.getAllCountries().map((country) => ({
     value: country.isoCode,
     displayValue: `${country.name} (${country.isoCode})`,
@@ -99,7 +105,7 @@ export const Content: React.FC<Props> = ({
           ) : (
             <Button
               className="w-full md:w-28 lg:w-32 rounded-full bg-[#FF9C00] hover:bg-orange-500/90 active:border-b-0 text-black px-4 py-2 sm:py-3 md:py-3 lg:py-4 ml-0 md:ml-2 lg:ml-2"
-              onClick={handleReadMoreClick}
+              onClick={handleSearchClick}
             >
               Search
             </Button>
