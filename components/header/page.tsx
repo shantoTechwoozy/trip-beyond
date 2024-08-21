@@ -73,9 +73,8 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`relative ${
-        pathname === "/" ? "h-[900px] md:h-[400px] lg:h-[450px] bg-[url('/menubar/banner.jpg')] bg-no-repeat bg-cover bg-center" : "h-auto"
-      } ${pathname !== "/" ? "bg-[#1e2755]" : ""}`}
+      className={`relative ${pathname === "/" ? "h-[1000px] md:h-[400px] lg:h-[450px] bg-[url('/menubar/banner.jpg')] bg-no-repeat bg-cover bg-center" : "h-auto"
+        } ${pathname !== "/" ? "bg-[#1e2755]" : ""}`}
     >
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-28">
         <div className="flex h-24 items-center justify-between">
