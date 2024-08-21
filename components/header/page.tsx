@@ -266,7 +266,6 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
 const HeaderWithProvider: React.FC = () => (
   <DialogProvider>
     <Header />
